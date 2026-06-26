@@ -5,7 +5,8 @@ hide:
 ---
 
 <div class="ten-hero" markdown="1">
-  <p class="ten-eyebrow">Tenacious Engineering</p>
+  <img class="ten-hero-logo" src="assets/logo.svg" alt="Tenacious Intelligence logo" width="92" height="92">
+  <p class="ten-eyebrow">Tenacious Intelligence</p>
   <h1>The standard for how we build software</h1>
   <p class="ten-sub">
     One consistent way to set up repositories, manage projects, and ship code —
