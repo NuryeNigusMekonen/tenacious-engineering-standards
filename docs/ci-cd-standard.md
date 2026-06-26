@@ -12,11 +12,11 @@ and lives in `.github/workflows/`.
 
 At minimum, CI must run and pass:
 
-- **Build** — the project compiles / builds successfully.
-- **Lint and format** — code style is enforced automatically, not by hand in review.
-- **Tests** — the automated test suite runs and passes.
-- **Security scanning** — dependency and code scanning (see the [Security Standard](security-standard.md)).
-- **Secret scanning** — no secrets are present in the diff (see [Secrets Management](secrets-management-standard.md)).
+- **Build** - the project compiles / builds successfully.
+- **Lint and format** - code style is enforced automatically, not by hand in review.
+- **Tests** - the automated test suite runs and passes.
+- **Security scanning** - dependency and code scanning (see the [Security Standard](security-standard.md)).
+- **Secret scanning** - no secrets are present in the diff (see [Secrets Management](secrets-management-standard.md)).
 
 These checks are **required status checks** in branch protection. A PR cannot merge until they pass.
 
@@ -50,16 +50,16 @@ For projects that deploy:
 
 ### Deployment gates
 
-- **Production deploys require an approval gate** — a human approves the promotion to production.
+- **Production deploys require an approval gate** - a human approves the promotion to production.
 - Production deploys are tied to releases (see the [Release Management Standard](release-management-standard.md)).
 - Use GitHub Environments with protection rules to enforce approvals and restrict who can deploy.
 
 ## Pipeline principles
 
-- **Fast** — keep CI under ~10 minutes so it doesn't slow down review. Cache dependencies; parallelize jobs.
-- **Reliable** — a flaky pipeline trains people to ignore failures. Fix or quarantine flaky tests immediately.
-- **Reproducible** — pin action and tool versions so a green build today is a green build tomorrow.
-- **Least privilege** — workflows use scoped, minimal permissions and pull credentials from the secret store,
+- **Fast** - keep CI under ~10 minutes so it doesn't slow down review. Cache dependencies; parallelize jobs.
+- **Reliable** - a flaky pipeline trains people to ignore failures. Fix or quarantine flaky tests immediately.
+- **Reproducible** - pin action and tool versions so a green build today is a green build tomorrow.
+- **Least privilege** - workflows use scoped, minimal permissions and pull credentials from the secret store,
   never from committed files (see [Secrets Management](secrets-management-standard.md)).
 
 !!! warning "A red pipeline blocks merge"

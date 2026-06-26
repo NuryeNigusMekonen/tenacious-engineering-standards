@@ -1,12 +1,12 @@
-/* ===== Tenacious Engineering Standards — brand + landing page ===== */
+/* ===== Tenacious Engineering Standards - brand + landing page ===== */
 
 /* Brand palette taken from the Tenacious Intelligence firefly logo:
    purple mark #5B52A8, navy wordmark #1F2A6E */
 :root {
-  --md-primary-fg-color:        #1F2A6E;  /* navy — header / primary */
+  --md-primary-fg-color:        #1F2A6E;  /* navy - header / primary */
   --md-primary-fg-color--light: #5B52A8;  /* purple */
   --md-primary-fg-color--dark:  #161E54;
-  --md-accent-fg-color:         #5B52A8;  /* purple — links / accents */
+  --md-accent-fg-color:         #5B52A8;  /* purple - links / accents */
   --ten-purple:                 #5B52A8;
   --ten-navy:                   #1F2A6E;
   --ten-radius: 14px;

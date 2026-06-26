@@ -9,16 +9,16 @@ and deployed to GitHub Pages via GitHub Actions.
 
 ## Who this is for
 
-- **Engineers** — the day-to-day rules for working in our repositories.
-- **Engineering managers** — the reference for onboarding, access management, and project setup.
-- **New team members** — start with the [Onboarding Guide](docs/onboarding-guide.md).
+- **Engineers** - the day-to-day rules for working in our repositories.
+- **Engineering managers** - the reference for onboarding, access management, and project setup.
+- **New team members** - start with the [Onboarding Guide](docs/onboarding-guide.md).
 
 ## Core rules at a glance
 
 - Every new repository must start from the approved template.
 - External client project repositories must include the client name and project name.
 - Every external client project must have a GitHub team named after the client.
-- All contributors must be added through GitHub Teams — never as individual collaborators.
+- All contributors must be added through GitHub Teams - never as individual collaborators.
 - Internal projects must use the internal GitHub team.
 - Access is managed through teams, not individuals.
 - Every project must follow our branch, PR, review, CI/CD, security, secrets, and release standards.

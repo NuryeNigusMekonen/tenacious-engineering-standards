@@ -8,7 +8,7 @@ use every day. Read it first, then keep the standards bookmarked.
 ### Day one
 
 1. Make sure you've been added to the right **GitHub team** (your manager handles this). At Tenacious,
-   access is granted through teams — you get repository access by being on the internal team or a client
+   access is granted through teams - you get repository access by being on the internal team or a client
    team, not by being added to repos individually.
 2. Read the [Home page](index.md) to understand why we have standards.
 3. Skim every standard once so you know what exists:
@@ -23,7 +23,7 @@ use every day. Read it first, then keep the standards bookmarked.
 
 ### Your first change
 
-Follow this flow — it's the same one for every change you'll ever make here:
+Follow this flow - it's the same one for every change you'll ever make here:
 
 1. Create a branch from `main` following the [Branching Standard](branching-standard.md)
    (e.g. `feature/ACME-123-add-export`).
@@ -42,7 +42,7 @@ That's it. If you can do this loop comfortably, you know how we work.
 Use the [Repository Management Standard](repository-management-standard.md) and its
 **project initialization checklist**. In short:
 
-1. Create the repository **from the approved template** — never from scratch.
+1. Create the repository **from the approved template** - never from scratch.
 2. Name it correctly:
     - Internal: `tenacious-<project>`.
     - Client: `<client>-<project>`, and put the **client name and project name** in the repo description.
@@ -56,7 +56,7 @@ Use the [Repository Management Standard](repository-management-standard.md) and 
 ### Adding and removing people
 
 - Add people to the relevant **team**; never add them as individual repository collaborators.
-- Remove people from the team when they leave the project — this revokes their access everywhere at once.
+- Remove people from the team when they leave the project - this revokes their access everywhere at once.
 
 ## Editing these standards
 

@@ -65,7 +65,7 @@ repository collaborators.
 
 ### Why teams, not individuals
 
-- Onboarding and offboarding happen in one place — add or remove a person from a team.
+- Onboarding and offboarding happen in one place - add or remove a person from a team.
 - Access is auditable: you can see who has access to what by looking at team membership.
 - Permissions stay consistent across all of a client's or the company's repositories.
 

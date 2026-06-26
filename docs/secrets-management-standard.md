@@ -1,6 +1,6 @@
 # Secrets Management Standard
 
-Secrets — passwords, API keys, tokens, certificates, connection strings — are among the most damaging
+Secrets - passwords, API keys, tokens, certificates, connection strings - are among the most damaging
 things to leak. This standard defines how we store, use, and rotate them.
 
 ## The one rule
@@ -21,12 +21,12 @@ containing a secret will be blocked.
   `.env.example` with placeholder keys and no real values.
 
 ```bash
-# .env.example  (committed — placeholders only)
+# .env.example  (committed - placeholders only)
 DATABASE_URL=
 STRIPE_API_KEY=
 JWT_SECRET=
 
-# .env          (git-ignored — real values, never committed)
+# .env          (git-ignored - real values, never committed)
 ```
 
 Ensure `.env` is in `.gitignore` (the template includes it).
@@ -57,10 +57,10 @@ Ensure `.env` is in `.gitignore` (the template includes it).
 A leaked secret is **compromised the moment it is exposed**, even briefly. Removing it from a later
 commit does not undo the leak.
 
-1. **Rotate it immediately** — invalidate the old value and issue a new one.
+1. **Rotate it immediately** - invalidate the old value and issue a new one.
 2. Update the secret store and CI secrets with the new value.
 3. Investigate where it leaked and what may have been accessed.
-4. Purge it from history if feasible, but treat rotation — not cleanup — as the real fix.
+4. Purge it from history if feasible, but treat rotation - not cleanup - as the real fix.
 5. Follow the vulnerability response process in the [Security Standard](security-standard.md).
 
 !!! danger "Don't wait to be sure"

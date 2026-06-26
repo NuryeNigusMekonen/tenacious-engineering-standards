@@ -14,7 +14,7 @@ For higher-risk areas (security, payments, infrastructure), require review from 
 ## Reviews route through CODEOWNERS
 
 Every repository has a `CODEOWNERS` file (provided by the template) mapping paths to the teams
-responsible for them. Because access is managed through teams, ownership is too — assign ownership to
+responsible for them. Because access is managed through teams, ownership is too - assign ownership to
 **teams**, not individuals, so reviews don't block on one person.
 
 ```
@@ -26,19 +26,19 @@ responsible for them. Because access is managed through teams, ownership is too 
 
 ## What reviewers check
 
-- **Correctness** — does it do what it claims, including edge cases?
-- **Readability** — will the next engineer understand this in six months?
-- **Tests** — is the change covered, and do the tests actually test the behavior?
-- **Security** — no injected vulnerabilities, no secrets, input is validated (see [Security](security-standard.md)).
-- **Standards** — does it follow our branching, PR, and CI/CD standards?
-- **Scope** — does the PR do one thing, or should it be split?
+- **Correctness** - does it do what it claims, including edge cases?
+- **Readability** - will the next engineer understand this in six months?
+- **Tests** - is the change covered, and do the tests actually test the behavior?
+- **Security** - no injected vulnerabilities, no secrets, input is validated (see [Security](security-standard.md)).
+- **Standards** - does it follow our branching, PR, and CI/CD standards?
+- **Scope** - does the PR do one thing, or should it be split?
 
 ## How to give a good review
 
 - Be specific and kind. Critique the code, not the person.
 - Distinguish **blocking** issues from **suggestions**. Prefix non-blocking comments with `nit:`.
 - Explain *why*, and propose an alternative where you can.
-- Approve when the change is good enough to ship — not only when it is perfect.
+- Approve when the change is good enough to ship - not only when it is perfect.
 - Review promptly. A PR waiting on review is blocked work.
 
 ## Author responsibilities

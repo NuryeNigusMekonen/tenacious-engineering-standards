@@ -25,10 +25,10 @@ Pre-release work may use suffixes like `1.4.0-rc.1`.
 
 Every release has notes describing what changed, grouped by:
 
-- **Added** — new features.
-- **Changed** — changes to existing behavior.
-- **Fixed** — bug fixes.
-- **Security** — security-relevant changes.
+- **Added** - new features.
+- **Changed** - changes to existing behavior.
+- **Fixed** - bug fixes.
+- **Security** - security-relevant changes.
 
 Because we squash-merge PRs with meaningful messages (see the [Pull Request Standard](pull-request-standard.md)),
 release notes can largely be assembled from merged PR titles. Maintain a `CHANGELOG.md` where the project warrants it.

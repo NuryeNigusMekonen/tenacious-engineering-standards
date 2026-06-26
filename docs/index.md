@@ -8,7 +8,7 @@ hide:
   <span class="ten-hero-logo"><img src="assets/tenacious-logo-full.png" alt="Tenacious Intelligence Corporation"></span>
   <h1>The standard for how we build software</h1>
   <p class="ten-sub">
-    One consistent way to set up repositories, manage projects, and ship code —
+    One consistent way to set up repositories, manage projects, and ship code
     across every internal and client project. Predictable, secure, and auditable by default.
   </p>
   <div class="ten-cta">
@@ -21,20 +21,20 @@ hide:
 ## Why these standards exist
 
 Every repository, on every project, should look and behave the same way. When a new engineer joins a
-project — or a manager audits one — they find the same structure, branching model, review process, and
+project - or a manager audits one - they find the same structure, branching model, review process, and
 release flow everywhere. Consistency is what lets us move quickly without losing control.
 
-- **Predictability** — anyone can move between projects and immediately know how things work.
-- **Quality** — shared rules for reviews, CI/CD, and security raise the floor on everything we ship.
-- **Onboarding** — new engineers ramp against one documented way of working, not tribal knowledge.
-- **Client trust** — external projects are set up consistently, with clear ownership and access control.
-- **Auditability** — access, secrets, and releases follow rules that can be checked and proven.
+- **Predictability** - anyone can move between projects and immediately know how things work.
+- **Quality** - shared rules for reviews, CI/CD, and security raise the floor on everything we ship.
+- **Onboarding** - new engineers ramp against one documented way of working, not tribal knowledge.
+- **Client trust** - external projects are set up consistently, with clear ownership and access control.
+- **Auditability** - access, secrets, and releases follow rules that can be checked and proven.
 
 ## Explore the standards
 
 <div class="ten-cards">
 <a class="ten-card" href="onboarding-guide/"><span class="ten-card-icon">🚀</span><h3>Onboarding Guide</h3><p>Where new engineers and managers start. The first-change loop, end to end.</p></a>
-<a class="ten-card" href="repository-management-standard/"><span class="ten-card-icon">📦</span><h3>Repository Management</h3><p>Templates, naming, teams, access — plus the project initialization checklist.</p></a>
+<a class="ten-card" href="repository-management-standard/"><span class="ten-card-icon">📦</span><h3>Repository Management</h3><p>Templates, naming, teams, access - plus the project initialization checklist.</p></a>
 <a class="ten-card" href="branching-standard/"><span class="ten-card-icon">🌿</span><h3>Branching</h3><p>Our trunk-based model and branch naming conventions.</p></a>
 <a class="ten-card" href="pull-request-standard/"><span class="ten-card-icon">🔀</span><h3>Pull Requests</h3><p>How to open, describe, and merge changes into <code>main</code>.</p></a>
 <a class="ten-card" href="code-review-standard/"><span class="ten-card-icon">🔎</span><h3>Code Review</h3><p>What authors and reviewers are responsible for, routed via CODEOWNERS.</p></a>
@@ -51,7 +51,7 @@ These apply to **every** project, internal or external:
 - Every new repository **must start from the approved template**.
 - External client project repositories **must include the client name and project name**.
 - Every external client project **must have a GitHub team named after the client**.
-- All contributors **must be added through GitHub Teams** — never as individual collaborators.
+- All contributors **must be added through GitHub Teams** - never as individual collaborators.
 - Internal projects **must use the internal GitHub team**.
 - Access is **managed through teams, not individuals**.
 - Every project **must follow the branch, PR, review, CI/CD, security, secrets, and release standards** on this site.

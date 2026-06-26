@@ -1,6 +1,6 @@
 # Security Standard
 
-Security is everyone's responsibility, and it is built in from the first commit — not bolted on later.
+Security is everyone's responsibility, and it is built in from the first commit - not bolted on later.
 This standard defines the baseline security requirements for every Tenacious repository.
 
 ## Baseline requirements
@@ -25,14 +25,14 @@ Every repository must have, from the template:
 - Keep dependencies up to date; triage scanner alerts promptly.
 - Prefer well-maintained, widely-used libraries over obscure ones.
 - Pin versions and use lockfiles so builds are reproducible.
-- Review new dependencies before adding them — every dependency is attack surface.
+- Review new dependencies before adding them - every dependency is attack surface.
 
 ## Secure coding
 
 - Validate and sanitize all external input.
 - Use parameterized queries; never build SQL or shell commands by string concatenation.
 - Encode output to prevent injection (XSS, command injection, etc.).
-- Use vetted libraries for cryptography, authentication, and session management — do not roll your own.
+- Use vetted libraries for cryptography, authentication, and session management - do not roll your own.
 - Apply least privilege to service accounts, tokens, and database users.
 
 ## Secrets
@@ -56,4 +56,4 @@ The headline rule: **secrets never live in the repository.** Secret scanning enf
 
 !!! danger "If you think a secret leaked"
     Treat it as compromised. Rotate it immediately and follow the
-    [Secrets Management Standard](secrets-management-standard.md) — do not wait to confirm.
+    [Secrets Management Standard](secrets-management-standard.md) - do not wait to confirm.

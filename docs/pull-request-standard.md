@@ -5,7 +5,7 @@ and merge them.
 
 ## When to open a PR
 
-- Open a PR for **every** change merged into `main` — features, fixes, docs, and chores alike.
+- Open a PR for **every** change merged into `main` - features, fixes, docs, and chores alike.
 - Open it early as a **draft** if you want CI feedback or early discussion before the work is finished.
 - Mark it ready for review only when it is complete and CI is green.
 
@@ -21,12 +21,12 @@ Small PRs are reviewed faster, more thoroughly, and merged sooner. A good PR doe
 
 Every PR uses the repository's pull request template. A good description includes:
 
-- **What** — a short summary of the change.
-- **Why** — the motivation or the ticket it resolves (link the issue, e.g. `Closes ACME-123`).
-- **How** — notable implementation decisions or trade-offs.
-- **Testing** — how the change was verified.
-- **Screenshots / output** — for user-facing or behavioral changes.
-- **Risk and rollback** — anything reviewers should watch for, and how to revert if needed.
+- **What** - a short summary of the change.
+- **Why** - the motivation or the ticket it resolves (link the issue, e.g. `Closes ACME-123`).
+- **How** - notable implementation decisions or trade-offs.
+- **Testing** - how the change was verified.
+- **Screenshots / output** - for user-facing or behavioral changes.
+- **Risk and rollback** - anything reviewers should watch for, and how to revert if needed.
 
 ```markdown
 ## What
@@ -58,7 +58,7 @@ A PR may only be merged when:
 ## Merging
 
 - **Squash and merge** is the default, producing one clean commit on `main`.
-- The squash commit message must be meaningful — it becomes the permanent history entry and feeds release notes.
+- The squash commit message must be meaningful - it becomes the permanent history entry and feeds release notes.
 - Delete the branch after merge.
 
 ## Authoring etiquette

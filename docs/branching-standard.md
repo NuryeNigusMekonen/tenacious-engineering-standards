@@ -9,7 +9,7 @@ We use a **trunk-based** model with short-lived feature branches:
 
 - `main` is the single long-lived branch. It is always releasable.
 - All work happens on short-lived branches created from `main`.
-- Branches are merged back into `main` through a pull request — never by direct push.
+- Branches are merged back into `main` through a pull request - never by direct push.
 
 Keep branches small and short-lived. A branch that lives for weeks accumulates conflicts and risk.
 Aim to merge within a few days.
