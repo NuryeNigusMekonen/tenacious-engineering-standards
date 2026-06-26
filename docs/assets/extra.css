@@ -50,11 +50,17 @@
 .ten-hero > * { position: relative; z-index: 1; }
 
 .ten-hero-logo {
+  display: inline-block;
+  margin: 0 auto 1.6rem;
+  padding: 1rem 1.6rem;
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 12px 34px rgba(0, 0, 0, 0.28);
+}
+.ten-hero-logo img {
   display: block;
-  width: 92px;
-  height: 92px;
-  margin: 0 auto 1.1rem;
-  filter: drop-shadow(0 6px 16px rgba(0, 0, 0, 0.25));
+  height: 64px;
+  width: auto;
 }
 
 .ten-hero .ten-eyebrow {
