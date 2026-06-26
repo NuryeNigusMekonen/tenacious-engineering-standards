@@ -1,54 +1,88 @@
 site_name: Tenacious Engineering Standards
 site_description: The official reference for engineering standards at Tenacious.
 site_author: Tenacious Engineering
+site_url: https://nuryenigusmekonen.github.io/tenacious-engineering-standards/
+
+# --- Repository integration ---
+repo_name: tenacious-engineering-standards
+repo_url: https://github.com/NuryeNigusMekonen/tenacious-engineering-standards
+edit_uri: edit/main/docs/
+
 docs_dir: docs
 
 theme:
   name: material
+  logo: assets/logo.svg
+  favicon: assets/favicon.svg
+  font:
+    text: Inter
+    code: JetBrains Mono
   palette:
     - media: "(prefers-color-scheme: light)"
       scheme: default
       primary: indigo
-      accent: indigo
+      accent: deep purple
       toggle:
         icon: material/weather-night
         name: Switch to dark mode
     - media: "(prefers-color-scheme: dark)"
       scheme: slate
       primary: indigo
-      accent: indigo
+      accent: deep purple
       toggle:
         icon: material/weather-sunny
         name: Switch to light mode
   features:
     - navigation.instant
+    - navigation.instant.progress
     - navigation.tracking
     - navigation.sections
     - navigation.top
     - navigation.footer
+    - navigation.indexes
     - search.suggest
     - search.highlight
+    - search.share
     - content.code.copy
+    - content.action.edit
+    - content.action.view
+    - content.tooltips
     - toc.follow
   icon:
     repo: fontawesome/brands/github
+    edit: material/pencil
+    view: material/eye
 
 plugins:
   - search
+  - git-revision-date-localized:
+      type: timeago
+      enable_creation_date: true
+      fallback_to_build_date: true
 
 markdown_extensions:
   - admonition
   - attr_list
+  - md_in_html
   - tables
+  - footnotes
   - toc:
       permalink: true
   - pymdownx.highlight:
       anchor_linenums: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
   - pymdownx.superfences
   - pymdownx.tabbed:
       alternate_style: true
   - pymdownx.tasklist:
       custom_checkbox: true
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+
+extra_css:
+  - assets/extra.css
 
 nav:
   - Home: index.md
@@ -66,4 +100,9 @@ nav:
 extra:
   social:
     - icon: fontawesome/brands/github
-      link: https://github.com/tenacious
+      link: https://github.com/NuryeNigusMekonen/tenacious-engineering-standards
+      name: Tenacious on GitHub
+  generator: false
+
+copyright: >
+  Copyright &copy; Tenacious Engineering — internal reference, maintained as code.

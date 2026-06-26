@@ -1,0 +1,145 @@
+/* ===== Tenacious Engineering Standards — brand + landing page ===== */
+
+:root {
+  --md-primary-fg-color:        #4051b5;
+  --md-primary-fg-color--light: #5c6bc0;
+  --md-primary-fg-color--dark:  #2e3a8c;
+  --md-accent-fg-color:         #7c4dff;
+  --ten-radius: 14px;
+  --ten-border: var(--md-default-fg-color--lightest);
+}
+
+/* Slightly tighter, more "product" heading rhythm */
+.md-typeset h1 {
+  font-weight: 800;
+  letter-spacing: -0.02em;
+}
+.md-typeset h2 {
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+
+/* ---------- Hero ---------- */
+.ten-hero {
+  position: relative;
+  margin: -1.2rem -0.8rem 2.5rem;
+  padding: 4rem 1.5rem 3.5rem;
+  border-radius: var(--ten-radius);
+  text-align: center;
+  color: #fff;
+  background:
+    radial-gradient(1200px 400px at 50% -10%, rgba(124, 77, 255, 0.55), transparent 60%),
+    linear-gradient(135deg, #2e3a8c 0%, #4051b5 55%, #5c6bc0 100%);
+  overflow: hidden;
+}
+.ten-hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.06) 1px, transparent 1px);
+  background-size: 32px 32px;
+  mask-image: radial-gradient(60% 80% at 50% 0%, #000, transparent 75%);
+  pointer-events: none;
+}
+.ten-hero > * { position: relative; z-index: 1; }
+
+.ten-hero .ten-eyebrow {
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  font-size: 0.72rem;
+  font-weight: 700;
+  opacity: 0.85;
+  margin: 0 0 0.6rem;
+}
+.ten-hero h1 {
+  color: #fff;
+  font-size: 2.5rem;
+  line-height: 1.1;
+  margin: 0 auto 0.8rem;
+  max-width: 18ch;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+}
+.ten-hero p.ten-sub {
+  color: rgba(255, 255, 255, 0.92);
+  font-size: 1.05rem;
+  max-width: 56ch;
+  margin: 0 auto 1.8rem;
+}
+
+/* Hero buttons */
+.ten-cta {
+  display: inline-flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  justify-content: center;
+}
+.ten-cta .md-button {
+  border-radius: 999px;
+  padding: 0.55rem 1.4rem;
+  font-weight: 600;
+}
+.ten-cta .md-button--primary {
+  background: #fff;
+  color: var(--md-primary-fg-color--dark);
+  border-color: #fff;
+}
+.ten-cta .md-button--primary:hover {
+  background: rgba(255, 255, 255, 0.9);
+  color: var(--md-primary-fg-color--dark);
+}
+.ten-cta .md-button:not(.md-button--primary) {
+  color: #fff;
+  border-color: rgba(255, 255, 255, 0.6);
+}
+.ten-cta .md-button:not(.md-button--primary):hover {
+  background: rgba(255, 255, 255, 0.12);
+  border-color: #fff;
+}
+
+/* ---------- Feature cards ---------- */
+.ten-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem;
+  margin: 1.5rem 0 2rem;
+}
+.ten-card {
+  display: block;
+  padding: 1.25rem 1.25rem 1.1rem;
+  border: 1px solid var(--ten-border);
+  border-radius: var(--ten-radius);
+  background: var(--md-default-bg-color);
+  transition: transform 0.15s ease, box-shadow 0.15s ease, border-color 0.15s ease;
+  color: inherit !important;
+  text-decoration: none !important;
+}
+.ten-card:hover {
+  transform: translateY(-3px);
+  border-color: var(--md-primary-fg-color--light);
+  box-shadow: 0 10px 30px rgba(64, 81, 181, 0.15);
+}
+.ten-card .ten-card-icon {
+  font-size: 1.6rem;
+  line-height: 1;
+  display: block;
+  margin-bottom: 0.6rem;
+}
+.ten-card h3 {
+  margin: 0 0 0.35rem;
+  font-size: 1rem;
+  font-weight: 700;
+}
+.ten-card p {
+  margin: 0;
+  font-size: 0.83rem;
+  color: var(--md-default-fg-color--light);
+  line-height: 1.45;
+}
+
+@media screen and (max-width: 44.9em) {
+  .ten-hero h1 { font-size: 1.9rem; }
+  .ten-hero { padding: 2.75rem 1rem 2.5rem; }
+}
