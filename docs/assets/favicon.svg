@@ -1,7 +1,17 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="48" height="48" fill="none">
-  <rect width="48" height="48" rx="11" fill="#4051b5"/>
-  <path d="M24 9 L38 15 V25 C38 33 32 38 24 40 C16 38 10 33 10 25 V15 Z"
-        fill="#ffffff" fill-opacity="0.95"/>
-  <path d="M17 24 l5 5 l9 -11" stroke="#4051b5" stroke-width="3.5"
-        stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <rect width="512" height="512" rx="112" fill="#ffffff"/>
+  <g fill="#5B52A8" stroke="#5B52A8" stroke-linejoin="round" stroke-linecap="round">
+    <!-- antennae tips -->
+    <circle cx="196" cy="96" r="26"/>
+    <circle cx="316" cy="96" r="26"/>
+    <!-- antennae stalks -->
+    <path d="M204 112 L246 184" stroke-width="26" fill="none"/>
+    <path d="M308 112 L266 184" stroke-width="26" fill="none"/>
+    <!-- left wing: long teardrop swept out and down -->
+    <path d="M244 188 C150 160 70 196 78 268 C84 330 168 338 226 286 C252 262 258 220 244 188 Z" stroke="none"/>
+    <!-- right wing -->
+    <path d="M268 188 C362 160 442 196 434 268 C428 330 344 338 286 286 C260 262 254 220 268 188 Z" stroke="none"/>
+    <!-- body / abdomen: long taper to a point -->
+    <path d="M256 186 C286 186 296 226 296 268 C296 348 274 432 256 432 C238 432 216 348 216 268 C216 226 226 186 256 186 Z" stroke="none"/>
+  </g>
 </svg>

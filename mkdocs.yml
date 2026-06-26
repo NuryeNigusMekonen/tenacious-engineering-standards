@@ -1,12 +1,13 @@
 site_name: Tenacious Engineering Standards
 site_description: The official reference for engineering standards at Tenacious.
-site_author: Tenacious Engineering
+site_author: Tenacious Intelligence Corporation
 site_url: https://nuryenigusmekonen.github.io/tenacious-engineering-standards/
 
 # --- Repository integration ---
+# repo link is shown for reference, but page editing/viewing from the site is disabled.
 repo_name: tenacious-engineering-standards
 repo_url: https://github.com/NuryeNigusMekonen/tenacious-engineering-standards
-edit_uri: edit/main/docs/
+edit_uri: ""
 
 docs_dir: docs
 
@@ -20,14 +21,14 @@ theme:
   palette:
     - media: "(prefers-color-scheme: light)"
       scheme: default
-      primary: indigo
+      primary: black
       accent: deep purple
       toggle:
         icon: material/weather-night
         name: Switch to dark mode
     - media: "(prefers-color-scheme: dark)"
       scheme: slate
-      primary: indigo
+      primary: black
       accent: deep purple
       toggle:
         icon: material/weather-sunny
@@ -44,14 +45,10 @@ theme:
     - search.highlight
     - search.share
     - content.code.copy
-    - content.action.edit
-    - content.action.view
     - content.tooltips
     - toc.follow
   icon:
     repo: fontawesome/brands/github
-    edit: material/pencil
-    view: material/eye
 
 plugins:
   - search
@@ -105,4 +102,4 @@ extra:
   generator: false
 
 copyright: >
-  Copyright &copy; Tenacious Engineering — internal reference, maintained as code.
+  Copyright &copy; Tenacious Intelligence Corporation — internal reference, maintained as code.

@@ -1,10 +1,14 @@
 /* ===== Tenacious Engineering Standards — brand + landing page ===== */
 
+/* Brand palette taken from the Tenacious Intelligence firefly logo:
+   purple mark #5B52A8, navy wordmark #1F2A6E */
 :root {
-  --md-primary-fg-color:        #4051b5;
-  --md-primary-fg-color--light: #5c6bc0;
-  --md-primary-fg-color--dark:  #2e3a8c;
-  --md-accent-fg-color:         #7c4dff;
+  --md-primary-fg-color:        #1F2A6E;  /* navy — header / primary */
+  --md-primary-fg-color--light: #5B52A8;  /* purple */
+  --md-primary-fg-color--dark:  #161E54;
+  --md-accent-fg-color:         #5B52A8;  /* purple — links / accents */
+  --ten-purple:                 #5B52A8;
+  --ten-navy:                   #1F2A6E;
   --ten-radius: 14px;
   --ten-border: var(--md-default-fg-color--lightest);
 }
@@ -28,8 +32,8 @@
   text-align: center;
   color: #fff;
   background:
-    radial-gradient(1200px 400px at 50% -10%, rgba(124, 77, 255, 0.55), transparent 60%),
-    linear-gradient(135deg, #2e3a8c 0%, #4051b5 55%, #5c6bc0 100%);
+    radial-gradient(1200px 400px at 50% -10%, rgba(91, 82, 168, 0.65), transparent 60%),
+    linear-gradient(135deg, #161E54 0%, #1F2A6E 50%, #5B52A8 100%);
   overflow: hidden;
 }
 .ten-hero::after {
@@ -118,8 +122,8 @@
 }
 .ten-card:hover {
   transform: translateY(-3px);
-  border-color: var(--md-primary-fg-color--light);
-  box-shadow: 0 10px 30px rgba(64, 81, 181, 0.15);
+  border-color: var(--ten-purple);
+  box-shadow: 0 10px 30px rgba(91, 82, 168, 0.18);
 }
 .ten-card .ten-card-icon {
   font-size: 1.6rem;
