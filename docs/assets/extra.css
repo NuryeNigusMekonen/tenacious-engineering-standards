@@ -26,7 +26,7 @@
 /* ---------- Hero ---------- */
 .ten-hero {
   position: relative;
-  margin: -1.2rem -0.8rem 2.5rem;
+  margin: -1.2rem 0 2.5rem;
   padding: 4rem 1.5rem 3.5rem;
   border-radius: var(--ten-radius);
   text-align: center;
