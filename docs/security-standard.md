@@ -32,7 +32,6 @@ Every repository must have, from the template:
 - Validate and sanitize all external input.
 - Use parameterized queries; never build SQL or shell commands by string concatenation.
 - Encode output to prevent injection (XSS, command injection, etc.).
-- Use vetted libraries for cryptography, authentication, and session management - do not roll your own.
 - Apply least privilege to service accounts, tokens, and database users.
 
 ## Secrets
