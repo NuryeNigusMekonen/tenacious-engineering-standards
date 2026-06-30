@@ -49,9 +49,20 @@
 }
 .ten-hero > * { position: relative; z-index: 1; }
 
+/* The markdown="1" processor wraps hero blocks (e.g. the logo) in <p> tags.
+   Force those wrappers full-width and centered so .md-typeset's max-width:74ch
+   left-bias doesn't pull the centered content (logo) off to the left. */
+.ten-hero p,
+.md-typeset .ten-hero p {
+  max-width: none;
+  margin-left: 0;
+  margin-right: 0;
+  text-align: center;
+}
+
 .ten-hero-logo {
-  display: table;
-  margin: 0 auto 1.6rem;
+  display: inline-block;
+  margin: 0 0 1.6rem;
   padding: 1rem 1.6rem;
   background: #fff;
   border-radius: 16px;
