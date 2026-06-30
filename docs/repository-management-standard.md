@@ -21,6 +21,25 @@ branching, PR, review, CI/CD, security, and release configuration is present fro
     A repository that was not created from the template is not considered a valid Tenacious repository.
     Recreate it from the template and migrate the code.
 
+### Integrating an existing repository
+
+If you already have a repository that was **not** created from the template, you do not have to recreate
+it by hand. Run the integration script from the repository root to pull in the standard structure
+(`.github/` workflows, PR and issue templates, CODEOWNERS, `.gitignore`, security policy, and branch
+protection configuration):
+
+```bash
+gh api repos/get10acious/tenacious-repo-template/contents/scripts/integrate.sh \
+  -H "Accept: application/vnd.github.raw" | bash
+```
+
+!!! note "Requirements"
+    You need the [GitHub CLI](https://cli.github.com/) (`gh`) installed and authenticated (`gh auth login`),
+    and you must run the command from the root of the repository you want to integrate.
+
+After running it, review the changes, commit them, and complete the
+[project initialization checklist](#5-project-initialization-checklist).
+
 ## 2. Repository naming
 
 ### Internal projects
