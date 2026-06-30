@@ -3,10 +3,9 @@
 This standard defines how repositories are created, named, owned, and accessed at Tenacious.
 It is the first standard to read before starting any project.
 
-## 1. Every repository starts from the approved template
+## 1. Every repository uses the approved template structure
 
-Every new repository **must** be created from the official Tenacious repository template. The template
-provides the baseline structure that all other standards depend on:
+Every repository **must** have the baseline structure that all other standards depend on:
 
 - A starter `README.md` with the required sections.
 - Pre-configured branch protection settings.
@@ -14,19 +13,15 @@ provides the baseline structure that all other standards depend on:
 - A baseline `.gitignore`, license, and security policy.
 - The CODEOWNERS file.
 
-Do not create empty repositories and add structure by hand. Starting from the template guarantees that
-branching, PR, review, CI/CD, security, and release configuration is present from commit one.
+Do not create empty repositories and add structure by hand. Whether you are starting a new project or
+adopting an existing one, use the integration command below so that branching, PR, review, CI/CD,
+security, and release configuration is present from the start.
 
-!!! warning "No exceptions"
-    A repository that was not created from the template is not considered a valid Tenacious repository.
-    Recreate it from the template and migrate the code.
+### Integrating the template
 
-### Integrating an existing repository
-
-If you already have a repository that was **not** created from the template, you do not have to recreate
-it by hand. Run the integration script from the repository root to pull in the standard structure
-(`.github/` workflows, PR and issue templates, CODEOWNERS, `.gitignore`, security policy, and branch
-protection configuration):
+Run the integration script from the repository root to pull in the standard structure (`.github/`
+workflows, PR and issue templates, CODEOWNERS, `.gitignore`, security policy, and branch protection
+configuration). **This works for both new and existing repositories:**
 
 ```bash
 gh api repos/get10acious/tenacious-repo-template/contents/scripts/integrate.sh \
@@ -107,7 +102,7 @@ Every repository must have, from the template:
 
 Complete this checklist at the start of **every** project before writing feature code.
 
-- [ ] Repository created from the **approved template**.
+- [ ] Repository integrated with the **approved template** (run the integration command - works for new and existing repos).
 - [ ] Name follows the convention (`tenacious-<project>` for internal, `<client>-<project>` for client work).
 - [ ] For client work: the repository name and description include the **client name and project name**.
 - [ ] For client work: a **GitHub team named after the client** exists.
