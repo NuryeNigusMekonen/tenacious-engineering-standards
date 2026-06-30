@@ -18,6 +18,8 @@ hide:
   </div>
 </div>
 
+<div class="ten-page" markdown="1">
+
 ## Why these standards exist
 
 Every repository, on every project, should look and behave the same way. Consistency is what lets us
@@ -62,3 +64,5 @@ our code.
 !!! note "Where to start"
     Read the [Onboarding Guide](onboarding-guide.md), then the
     [Repository Management Standard](repository-management-standard.md) before creating your first project.
+
+</div>

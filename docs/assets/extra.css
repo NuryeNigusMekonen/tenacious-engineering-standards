@@ -23,6 +23,26 @@
   letter-spacing: -0.01em;
 }
 
+/* ---------- Landing page layout ---------- */
+/* When nav + toc are hidden (home page), the content area spans the full grid.
+   Constrain and center it so the page reads like a real landing page instead of
+   a wide, left-biased column. */
+.ten-page {
+  max-width: 960px;
+  margin: 0 auto;
+}
+.ten-page > h2 {
+  text-align: center;
+  border-bottom: none;
+  margin-top: 3rem;
+}
+.ten-page > p,
+.ten-page > ul {
+  max-width: 720px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 /* ---------- Hero ---------- */
 .ten-hero {
   position: relative;
