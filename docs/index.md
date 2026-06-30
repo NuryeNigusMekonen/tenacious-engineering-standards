@@ -32,15 +32,15 @@ move quickly without losing control:
 ## Explore the standards
 
 <div class="ten-cards">
-<a class="ten-card" href="onboarding-guide/"><span class="ten-card-icon">🚀</span><h3>Onboarding Guide</h3><p>Where new engineers and managers start. The first-change loop, end to end.</p></a>
-<a class="ten-card" href="repository-management-standard/"><span class="ten-card-icon">📦</span><h3>Repository Management</h3><p>Templates, naming, teams, access - plus the project initialization checklist.</p></a>
-<a class="ten-card" href="branching-standard/"><span class="ten-card-icon">🌿</span><h3>Branching</h3><p>Our trunk-based model and branch naming conventions.</p></a>
-<a class="ten-card" href="pull-request-standard/"><span class="ten-card-icon">🔀</span><h3>Pull Requests</h3><p>How to open, describe, and merge changes into <code>main</code>.</p></a>
-<a class="ten-card" href="code-review-standard/"><span class="ten-card-icon">🔎</span><h3>Code Review</h3><p>What authors and reviewers are responsible for, routed via CODEOWNERS.</p></a>
-<a class="ten-card" href="ci-cd-standard/"><span class="ten-card-icon">⚙️</span><h3>CI/CD</h3><p>Required pipelines, status checks, and production deployment gates.</p></a>
-<a class="ten-card" href="security-standard/"><span class="ten-card-icon">🛡️</span><h3>Security</h3><p>Baseline security requirements for every repository.</p></a>
-<a class="ten-card" href="secrets-management-standard/"><span class="ten-card-icon">🔐</span><h3>Secrets Management</h3><p>How secrets are stored, rotated, and never committed.</p></a>
-<a class="ten-card" href="release-management-standard/"><span class="ten-card-icon">🏷️</span><h3>Release Management</h3><p>Versioning, tagging, release notes, and rollback.</p></a>
+<a class="ten-card" href="onboarding-guide/"><h3>Onboarding Guide</h3><p>Where new engineers and managers start, including the first-change workflow.</p></a>
+<a class="ten-card" href="repository-management-standard/"><h3>Repository Management</h3><p>Templates, naming, teams, access - plus the project initialization checklist.</p></a>
+<a class="ten-card" href="branching-standard/"><h3>Branching</h3><p>Our trunk-based model and branch naming conventions.</p></a>
+<a class="ten-card" href="pull-request-standard/"><h3>Pull Requests</h3><p>How to open, describe, and merge changes into <code>main</code>.</p></a>
+<a class="ten-card" href="code-review-standard/"><h3>Code Review</h3><p>What authors and reviewers are responsible for, routed via CODEOWNERS.</p></a>
+<a class="ten-card" href="ci-cd-standard/"><h3>CI/CD</h3><p>Required pipelines, status checks, and production deployment gates.</p></a>
+<a class="ten-card" href="security-standard/"><h3>Security</h3><p>Baseline security requirements for every repository.</p></a>
+<a class="ten-card" href="secrets-management-standard/"><h3>Secrets Management</h3><p>How secrets are stored, rotated, and never committed.</p></a>
+<a class="ten-card" href="release-management-standard/"><h3>Release Management</h3><p>Versioning, tagging, release notes, and rollback.</p></a>
 </div>
 
 ## The core rules
@@ -59,6 +59,6 @@ to quietly ignore it. Open a pull request against this repository following the
 [Pull Request Standard](pull-request-standard.md). Standards evolve through the same review process as
 our code.
 
-!!! tip "New here?"
-    Start with the [Onboarding Guide](onboarding-guide.md), then read the
+!!! note "Where to start"
+    Read the [Onboarding Guide](onboarding-guide.md), then the
     [Repository Management Standard](repository-management-standard.md) before creating your first project.

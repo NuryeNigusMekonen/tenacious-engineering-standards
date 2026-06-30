@@ -139,6 +139,7 @@
   display: block;
   padding: 1.25rem 1.25rem 1.1rem;
   border: 1px solid var(--ten-border);
+  border-left: 3px solid var(--ten-border);
   border-radius: var(--ten-radius);
   background: var(--md-default-bg-color);
   transition: transform 0.15s ease, box-shadow 0.15s ease, border-color 0.15s ease;
@@ -148,13 +149,8 @@
 .ten-card:hover {
   transform: translateY(-3px);
   border-color: var(--ten-purple);
+  border-left-color: var(--ten-purple);
   box-shadow: 0 10px 30px rgba(91, 82, 168, 0.18);
-}
-.ten-card .ten-card-icon {
-  font-size: 1.6rem;
-  line-height: 1;
-  display: block;
-  margin-bottom: 0.6rem;
 }
 .ten-card h3 {
   margin: 0 0 0.35rem;

@@ -24,7 +24,7 @@ Follow this flow - it's the same one for every change you'll ever make here:
 5. Get an approving review (see the [Code Review Standard](code-review-standard.md)).
 6. Squash-merge, and delete your branch.
 
-That's it. If you can do this loop comfortably, you know how we work.
+Every change follows this loop, regardless of size.
 
 ## For engineering managers
 

@@ -67,5 +67,5 @@ A PR may only be merged when:
 - Re-request review after pushing changes in response to feedback.
 - Don't merge your own PR without the required approval, even if you have permission to.
 
-!!! tip "Draft early, polish late"
-    Opening a draft PR early gives reviewers context and lets CI catch issues before the work is "done".
+!!! note "Draft PRs"
+    Opening a draft PR early gives reviewers context and lets CI catch issues before the work is finished.
