@@ -164,9 +164,31 @@
 
 /* ---------- Content pages: readability polish ---------- */
 
-/* Comfortable measure and rhythm on standards pages */
+/* Comfortable reading measure + rhythm */
+.md-typeset { line-height: 1.7; }
+.md-typeset p,
+.md-typeset li { max-width: 74ch; }
+
+/* Page title gets a touch more presence and a branded underline accent */
+.md-typeset h1 {
+  font-size: 2.1rem;
+  margin-bottom: 1.4rem;
+  padding-bottom: 0.6rem;
+  border-bottom: 3px solid var(--ten-purple);
+  display: inline-block;
+}
+
+/* Lead paragraph: the first paragraph after the H1 reads as a calm intro */
+.md-typeset h1 + p {
+  font-size: 1.12rem;
+  line-height: 1.6;
+  color: var(--md-default-fg-color--light);
+  max-width: 70ch;
+}
+
+/* Section headings: clear separation without heavy lines */
 .md-typeset h2 {
-  margin-top: 2.4rem;
+  margin-top: 2.6rem;
   padding-bottom: 0.35rem;
   border-bottom: 1px solid var(--ten-border);
 }
@@ -213,3 +235,25 @@
   text-decoration-color: rgba(91, 82, 168, 0.35);
 }
 .md-typeset a:hover { text-decoration: underline; }
+
+/* Roomier lists so multi-line standards bullets breathe */
+.md-typeset ul li,
+.md-typeset ol li { margin-bottom: 0.4rem; }
+
+/* Permalink anchors: hidden until you hover the heading, in brand purple */
+.md-typeset .headerlink { color: var(--ten-border); transition: color 0.15s ease; }
+.md-typeset h1:hover .headerlink,
+.md-typeset h2:hover .headerlink,
+.md-typeset h3:hover .headerlink { color: var(--ten-purple); }
+
+/* Code blocks: soft border + rounded corners so they sit as tidy cards */
+.md-typeset pre > code {
+  border-radius: var(--ten-radius);
+}
+.md-typeset .highlight {
+  border-radius: var(--ten-radius);
+  box-shadow: 0 2px 12px rgba(31, 42, 110, 0.06);
+}
+
+/* Footer prev/next nav: a little more padding for an easier target */
+.md-footer__inner { padding: 1rem 0.2rem; }
