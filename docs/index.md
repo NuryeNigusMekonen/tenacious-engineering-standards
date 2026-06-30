@@ -20,9 +20,8 @@ hide:
 
 ## Why these standards exist
 
-Every repository, on every project, should look and behave the same way. When a new engineer joins a
-project - or a manager audits one - they find the same structure, branching model, review process, and
-release flow everywhere. Consistency is what lets us move quickly without losing control.
+Every repository, on every project, should look and behave the same way. Consistency is what lets us
+move quickly without losing control:
 
 - **Predictability** - anyone can move between projects and immediately know how things work.
 - **Quality** - shared rules for reviews, CI/CD, and security raise the floor on everything we ship.
@@ -48,13 +47,10 @@ release flow everywhere. Consistency is what lets us move quickly without losing
 
 These apply to **every** project, internal or external:
 
-- Every repository **must use the approved template structure** (apply it to new and existing repos with the integration command).
-- External client project repositories **must include the client name and project name**.
-- Every external client project **must have a GitHub team named after the client**.
-- All contributors **must be added through GitHub Teams** - never as individual collaborators.
-- Internal projects **must use the internal GitHub team**.
-- Access is **managed through teams, not individuals**.
-- Every project **must follow the branch, PR, review, CI/CD, security, secrets, and release standards** on this site.
+- Every repository **must use the approved template structure** - apply it to new and existing repos with the integration command.
+- Repositories are **named by convention**: `tenacious-<project>` internally, `<client>-<project>` for client work.
+- Access is **managed through GitHub Teams, never individuals** - a client team for client work, the internal team otherwise.
+- Every change **follows the branch, PR, review, CI/CD, security, secrets, and release standards** on this site.
 
 ## A standard is a contract
 

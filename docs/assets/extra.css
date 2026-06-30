@@ -161,3 +161,55 @@
   .ten-hero h1 { font-size: 1.9rem; }
   .ten-hero { padding: 2.75rem 1rem 2.5rem; }
 }
+
+/* ---------- Content pages: readability polish ---------- */
+
+/* Comfortable measure and rhythm on standards pages */
+.md-typeset h2 {
+  margin-top: 2.4rem;
+  padding-bottom: 0.35rem;
+  border-bottom: 1px solid var(--ten-border);
+}
+.md-typeset h3 { margin-top: 1.8rem; }
+
+/* Inline code: subtle brand tint so it reads as "literal" without shouting */
+.md-typeset code {
+  background: rgba(91, 82, 168, 0.10);
+  border-radius: 6px;
+  padding: 0.1em 0.35em;
+}
+.md-typeset pre code { background: none; padding: 0; }
+
+/* Tables: lighter, card-like, with zebra rows and a branded header */
+.md-typeset table:not([class]) {
+  border: 1px solid var(--ten-border);
+  border-radius: var(--ten-radius);
+  overflow: hidden;
+  box-shadow: 0 2px 10px rgba(31, 42, 110, 0.05);
+}
+.md-typeset table:not([class]) th {
+  background: rgba(31, 42, 110, 0.05);
+  font-weight: 700;
+}
+.md-typeset table:not([class]) tr:nth-child(2n) td {
+  background: var(--md-default-fg-color--lightest);
+}
+
+/* Admonitions: rounder corners and a softer card feel */
+.md-typeset .admonition,
+.md-typeset details {
+  border-radius: var(--ten-radius);
+  border-width: 1px;
+  box-shadow: 0 2px 12px rgba(31, 42, 110, 0.06);
+}
+
+/* Task lists / checklists: clearer, roomier line spacing */
+.md-typeset .task-list-item { margin-bottom: 0.35rem; }
+.md-typeset .task-list-control { margin-right: 0.2rem; }
+
+/* Links inside content stay on-brand and underline on hover for clarity */
+.md-typeset a {
+  color: var(--ten-purple);
+  text-decoration-color: rgba(91, 82, 168, 0.35);
+}
+.md-typeset a:hover { text-decoration: underline; }
