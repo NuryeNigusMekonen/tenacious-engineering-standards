@@ -177,10 +177,10 @@
 
 /* Comfortable reading measure + rhythm */
 .md-typeset { line-height: 1.7; }
-.md-typeset p,
+.md-typeset p:not(.ten-sub),
 .md-typeset li { max-width: 74ch; }
 
-/* Page title gets a touch more presence and a branded underline accent */
+/* Page title gets a touch more presence and a branded underline accent. */
 .md-typeset h1 {
   font-size: 2.1rem;
   margin-bottom: 1.4rem;
@@ -189,8 +189,17 @@
   display: inline-block;
 }
 
+/* The home-page hero title must stay centered and unstyled by the rule above. */
+.ten-hero h1 {
+  display: block;
+  border-bottom: none;
+  padding-bottom: 0;
+  margin: 0 auto 0.8rem;
+  font-size: 2.5rem;
+}
+
 /* Lead paragraph: the first paragraph after the H1 reads as a calm intro */
-.md-typeset h1 + p {
+.md-typeset h1 + p:not(.ten-sub) {
   font-size: 1.12rem;
   line-height: 1.6;
   color: var(--md-default-fg-color--light);
