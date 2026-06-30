@@ -48,7 +48,7 @@ release flow everywhere. Consistency is what lets us move quickly without losing
 
 These apply to **every** project, internal or external:
 
-- Every new repository **must start from the approved template**.
+- Every repository **must use the approved template structure** (apply it to new and existing repos with the integration command).
 - External client project repositories **must include the client name and project name**.
 - Every external client project **must have a GitHub team named after the client**.
 - All contributors **must be added through GitHub Teams** - never as individual collaborators.

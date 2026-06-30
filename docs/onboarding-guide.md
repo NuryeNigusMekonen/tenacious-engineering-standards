@@ -42,7 +42,8 @@ That's it. If you can do this loop comfortably, you know how we work.
 Use the [Repository Management Standard](repository-management-standard.md) and its
 **project initialization checklist**. In short:
 
-1. Create the repository **from the approved template** - never from scratch.
+1. Apply the **approved template structure** using the integration command - it works for both new and
+   existing repositories (see [Repository Management](repository-management-standard.md#integrating-the-template)).
 2. Name it correctly:
     - Internal: `tenacious-<project>`.
     - Client: `<client>-<project>`, and put the **client name and project name** in the repo description.
@@ -63,7 +64,7 @@ Use the [Repository Management Standard](repository-management-standard.md) and 
 This site is just Markdown. To propose a change:
 
 1. Branch from `main`.
-2. Edit or add a file in [`docs/`](https://github.com/tenacious/tenacious-engineering-standards/tree/main/docs).
+2. Edit or add a file in [`docs/`](https://github.com/NuryeNigusMekonen/tenacious-engineering-standards/tree/main/docs).
 3. If you add a page, register it under `nav:` in `mkdocs.yml`.
 4. Open a PR following the [Pull Request Standard](pull-request-standard.md).
 
