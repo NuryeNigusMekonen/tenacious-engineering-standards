@@ -9,10 +9,10 @@ before a change is promoted between environments. It comes after the change is b
 
 | Category | What manual validation covers |
 | --- | --- |
-| **Non-LLM behavior** | Functional and end-to-end paths: integrations (e.g. GHL, Twilio), auth, data flows, the full user/lead journey. **Deterministic** — a defined input has a defined correct output. |
+| **Non-LLM behavior** | Functional and end-to-end paths: integrations (e.g. GHL, Twilio), auth, data flows, the full user/lead journey. **Deterministic** - a defined input has a defined correct output. |
 | **LLM + RAG behavior** | Model-driven features: generation quality, sentiment/classification, qualification or suggestion logic, and retrieval quality. Judged against **agreed criteria**, not a single correct string. |
 
-Every feature is validated across both categories where both apply — you do not sign off deterministic
+Every feature is validated across both categories where both apply - you do not sign off deterministic
 paths and skip the model-driven ones, or vice versa.
 
 ## Validation runs before promotion
@@ -27,16 +27,16 @@ paths and skip the model-driven ones, or vice versa.
 For any feature with LLM behavior, the team builds a **fixed bank of 20–40 real inputs with agreed
 pass/fail criteria.** This is the load-bearing artifact of the framework:
 
-- It makes manual judgment **repeatable** — the same inputs, the same criteria, every time.
+- It makes manual judgment **repeatable** - the same inputs, the same criteria, every time.
 - It is the **explicit handoff into automation** (see the [Automation Test Standard](automation-testing-standard.md)).
-- It is **version-controlled** and **grows with the product** — it is not optional.
+- It is **version-controlled** and **grows with the product** - it is not optional.
 
-### Building the frozen task set — step by step
+### Building the frozen task set - step by step
 
-1. **Collect real inputs.** Pull 20–40 representative inputs from actual usage or realistic scenarios — not
+1. **Collect real inputs.** Pull 20–40 representative inputs from actual usage or realistic scenarios - not
    toy examples. Cover the common path, the edge cases, and the known failure modes.
 2. **Write pass/fail criteria for each.** For deterministic inputs, the criterion is the exact/structural
-   correct output. For model-driven inputs, the criterion is what a good answer must and must not do — the
+   correct output. For model-driven inputs, the criterion is what a good answer must and must not do - the
    qualities that make it acceptable, since there is no single correct string.
 3. **Freeze it.** Commit the input bank and its criteria to version control. This is the reference set.
 4. **Run it before each promotion.** Record each input as pass / fail / risk against its criteria, with
@@ -45,5 +45,5 @@ pass/fail criteria.** This is the load-bearing artifact of the framework:
    The set expands; it is never quietly shrunk.
 
 !!! note "Why frozen"
-    A fixed, version-controlled set is what turns subjective "it looked good" into a repeatable check —
+    A fixed, version-controlled set is what turns subjective "it looked good" into a repeatable check -
     and it is exactly the dataset automation inherits when manual runs become the bottleneck.

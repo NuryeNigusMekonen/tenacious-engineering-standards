@@ -14,7 +14,7 @@ deploys to exactly one environment.
 | `production` | Production | `staging` only | No direct push. PR required; promotion approved jointly by the Tech Lead and Project Owner. |
 | `staging` | Staging | `dev` only | No direct push. PR required; the Tech Lead approves promotion. |
 | `dev` | Development | feature branches | No direct push. PR required; merges once automated review and required checks pass. |
-| `feature/*` | — (local / dev) | cut from `dev` | Short-lived; deleted after merge. |
+| `feature/*` | - (local / dev) | cut from `dev` | Short-lived; deleted after merge. |
 
 ### One-way promotion
 
@@ -26,13 +26,13 @@ deploys to exactly one environment.
 ### Projects without a staging environment
 
 Projects that have no staging environment collapse to **dev → production**, with the Tech Lead owning the
-combined promotion gate. The promotion discipline does not change — only the number of stages.
+combined promotion gate. The promotion discipline does not change - only the number of stages.
 
 ## `dev` and `staging` are protected
 
 Every protected branch requires:
 
-- A pull request before merging — **no direct pushes**, including by maintainers.
+- A pull request before merging - **no direct pushes**, including by maintainers.
 - Automated review and required status checks to pass (see the [CI/CD Standard](ci-cd-standard.md)).
 - The branch to be up to date before merging.
 - Force pushes and branch deletion disabled.
@@ -85,10 +85,10 @@ hotfix/restore-payment-webhook
 Every merge into a protected branch goes through a pull request. PRs are gated on **automated review and
 required checks**, not on a human approval.
 
-- **Every PR includes a description:** what changed and why, in plain language — not a restatement of the
+- **Every PR includes a description:** what changed and why, in plain language - not a restatement of the
   diff. See the [Pull Request Standard](pull-request-standard.md) for the full description format.
 - **Automated review runs on every PR** (e.g. CodeRabbit, Copilot). The author addresses every comment it
-  raises — fix it, or reply with the reason it doesn't apply. Nothing is left unanswered.
+  raises - fix it, or reply with the reason it doesn't apply. Nothing is left unanswered.
 - **Passing automated review and required checks is the merge gate.** A teammate may review and weigh in,
   but a human approval is not required before merge. **The person merging owns the result.**
 

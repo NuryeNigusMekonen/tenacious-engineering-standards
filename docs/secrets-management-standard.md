@@ -1,6 +1,6 @@
 # Key Management
 
-This standard covers **all secrets** — AI/LLM provider keys, cloud credentials, third-party API keys, and
+This standard covers **all secrets** - AI/LLM provider keys, cloud credentials, third-party API keys, and
 database and service tokens. The governing principle:
 
 > **Every environment is isolated, every key is scoped and capped, and no credential ever lives in the repository.**
@@ -11,7 +11,7 @@ database and service tokens. The governing principle:
   keys for every provider. A dev key can never reach production data or production spend, and a leaked dev
   key cannot touch production.
 - **AI keys are treated exactly like cloud keys.** LLM provider keys are segregated per environment and
-  capped like any other paid resource — they are a direct cost line, not an exception.
+  capped like any other paid resource - they are a direct cost line, not an exception.
 
 ## Caps and controls
 
@@ -61,10 +61,10 @@ Ensure `.env` is in `.gitignore` (the template includes it).
 
 - **Every repo carries a pre-commit sanitization hook.** A robust, version-controlled pre-commit hook is
   injected into every project and **blocks a commit** when it detects a credential, token, or key in the
-  staged diff — stopping secrets before they ever enter history. This is the standard mechanism behind the
+  staged diff - stopping secrets before they ever enter history. This is the standard mechanism behind the
   "no credentials in the repo" rule and is rolled out to all repos.
 - **`make secret-scan`** runs a full scan of the repository, **including past history**, and surfaces
-  existing and historical secret leaks — not just what is in the current diff. It is the audit complement
+  existing and historical secret leaks - not just what is in the current diff. It is the audit complement
   to the pre-commit hook: the hook prevents new leaks, the scan finds what already landed. The same scan
   runs in CI as a second net (see the [CI/CD Standard](ci-cd-standard.md)).
 - **Anything surfaced is remediated, not ignored.** A scan that finds nothing is the only acceptable pass.
@@ -74,10 +74,10 @@ Ensure `.env` is in `.gitignore` (the template includes it).
 A leaked secret is **compromised the moment it is exposed**, even briefly. Removing it from a later commit
 does not undo the leak.
 
-1. **Rotate and revoke it immediately** — invalidate the old value and issue a new one.
+1. **Rotate and revoke it immediately** - invalidate the old value and issue a new one.
 2. Update the secret store and CI secrets with the new value.
 3. Investigate where it leaked and what may have been accessed.
-4. Clean it from history if feasible, but treat **rotation — not cleanup — as the real fix**.
+4. Clean it from history if feasible, but treat **rotation - not cleanup - as the real fix**.
 5. Follow the vulnerability response process in the [Security Standard](security-standard.md).
 
 !!! danger "Don't wait to be sure"
