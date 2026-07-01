@@ -1,61 +1,72 @@
-# Release Management Standard
+# Release Management
 
-A release is a deliberate, traceable act. This standard defines how we version, tag, and ship releases
-so that we always know what is running and can roll back if needed.
+How a validated change becomes a production release. Releases promote **dev → staging → production** (see
+the [Branch Strategy](branching-standard.md)).
 
-## Versioning
+> **Staging is the true release gate; production is execution only.**
 
-We use [Semantic Versioning](https://semver.org): `MAJOR.MINOR.PATCH`.
+By the time a change reaches production, every decision has already been made in staging. The production
+step deploys what staging approved — it introduces no new approval.
 
-| Bump | When |
+## Approval chain
+
+| Stage | Validated by | Approved by |
+| --- | --- | --- |
+| **Dev** | Engineer who built the change | Tech Lead (with DevOps if the role exists) |
+| **Staging** | Tech Lead | Tech Lead and Project Owner, **jointly — the release gate** |
+| **Production** | Deployment only — no new approval | — |
+
+- **Projects without staging** fold the staging checks into dev, with the Tech Lead owning the combined gate.
+- **Rollback plan per release.** Every release names how it will be rolled back. The mechanism is defined
+  at the project level (typically redeploying the previous version). Keep the previous release deployable
+  at all times.
+
+## Release record and versioning
+
+Maintain a **two-part record** in the release tracker:
+
+1. **A per-release log** — what shipped, when, and by whom.
+2. **A current-state environments view** — what version each environment is on.
+
+**Credentials never appear in the tracker — a pointer only** (see [Key Management](secrets-management-standard.md)).
+
+### Versioning
+
+Use **semantic versioning** with four release types:
+
+| Type | Meaning |
 | --- | --- |
-| **MAJOR** (`1.x.x` → `2.0.0`) | Backward-incompatible changes. |
-| **MINOR** (`x.1.x` → `x.2.0`) | New, backward-compatible functionality. |
-| **PATCH** (`x.x.1` → `x.x.2`) | Backward-compatible bug fixes. |
+| **First Release** | The initial production release of the project. |
+| **Major** | A significant, named release — the name is drawn from the project's codename pool. |
+| **Minor** | New, backward-compatible functionality. |
+| **Patch** | Backward-compatible bug fixes, including hotfixes. |
 
-Pre-release work may use suffixes like `1.4.0-rc.1`.
+Branch prefixes and the exact version scheme are set per project in its conventions record.
 
-## Releases are tagged
+## The release process
 
-- Every release is a **git tag** in the form `vMAJOR.MINOR.PATCH` (e.g. `v1.4.0`) on a commit in `main`.
-- Create a corresponding **GitHub Release** from the tag.
-- A release maps to exactly one commit, so we always know precisely what shipped.
-
-## Release notes
-
-Every release has notes describing what changed, grouped by:
-
-- **Added** - new features.
-- **Changed** - changes to existing behavior.
-- **Fixed** - bug fixes.
-- **Security** - security-relevant changes.
-
-Because we squash-merge PRs with meaningful messages (see the [Pull Request Standard](pull-request-standard.md)),
-release notes can largely be assembled from merged PR titles. Maintain a `CHANGELOG.md` where the project warrants it.
-
-## Release process
-
-1. Confirm `main` is green: all CI checks pass (see the [CI/CD Standard](ci-cd-standard.md)).
-2. Decide the version bump based on what changed since the last release.
-3. Update the changelog / version metadata via a pull request.
-4. Tag the release commit (`vX.Y.Z`) and create the GitHub Release with notes.
-5. The tag triggers the deployment pipeline to **staging**.
-6. Verify in staging.
-7. **Promote to production through the approval gate** (see the [CI/CD Standard](ci-cd-standard.md)).
+1. Confirm the change has passed manual validation (see the [Manual Testing Framework](manual-testing-standard.md))
+   and, where it exists, the automated suite (see the [Automation Test Standard](automation-testing-standard.md)).
+2. Promote `dev → staging` (Tech Lead approves).
+3. Validate in staging against the stated criteria.
+4. **Promote `staging → production` through the joint gate** (Tech Lead and Project Owner). This is the
+   release gate.
+5. Deploy to production — execution only, no new approval.
 
 ## Hotfix releases
 
-For urgent production fixes (see the [Branching Standard](branching-standard.md)):
+For urgent production fixes (see the [Branch Strategy](branching-standard.md) hotfix flow):
 
-1. Merge the reviewed `hotfix/` PR into `main`.
-2. Cut a **PATCH** release and tag it.
-3. Promote through staging to production via the normal gate, expedited.
+1. Merge the reviewed `hotfix/` PR into `production`, then merge the fix back down into `staging` and `dev`.
+2. Cut a **Patch** release.
+3. Record it in the release log and update the environments view.
 
-## Rollback
+## After the release
 
-- Every release is tagged, so rollback means redeploying the previous tag.
-- Keep the previous release deployable at all times.
-- Prefer rolling **forward** with a fix when safe; roll **back** when a fix would take too long.
+1. **Update the environments view** to the new production version.
+2. **Add the entry to the release log** (what shipped, when, by whom).
+3. **Announce in the project channel** — what shipped and anything the team needs to know.
 
-!!! note "Production deploys are gated"
-    A release reaching production always passes through the approval gate. No release skips staging.
+!!! note "Staging is the gate"
+    A release reaching production always passes through the staging gate. No release skips staging (or, on
+    projects without one, the combined dev gate the Tech Lead owns).

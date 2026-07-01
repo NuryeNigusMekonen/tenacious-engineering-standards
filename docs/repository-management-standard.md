@@ -92,11 +92,11 @@ repository collaborators.
 
 Every repository must have, from the template:
 
-- **Branch protection** on `main` per the [Branching Standard](branching-standard.md).
+- **Branch protection** on every protected branch (`dev`, `staging`, `production`) per the [Branch Strategy](branching-standard.md).
 - A **CODEOWNERS** file so reviews route to the right people per the [Code Review Standard](code-review-standard.md).
-- **CI/CD workflows** per the [CI/CD Standard](ci-cd-standard.md).
+- A **Makefile** as the local operating contract, and **CI/CD workflows** per the [CI/CD Standard](ci-cd-standard.md).
 - A **security policy** and scanning per the [Security Standard](security-standard.md).
-- **No secrets in the repo**, per the [Secrets Management Standard](secrets-management-standard.md).
+- A **pre-commit secret-scanning hook** and **no credentials in the repo**, per the [Key Management Standard](secrets-management-standard.md).
 
 ## 5. Project initialization checklist
 
@@ -109,13 +109,15 @@ Complete this checklist at the start of **every** project before writing feature
 - [ ] For internal work: the **internal GitHub team** is used.
 - [ ] All contributors are added **through the team**, not as individual collaborators.
 - [ ] Team access level (read / write / maintain) is set correctly for the project.
-- [ ] **Branch protection** on `main` is enabled (see [Branching](branching-standard.md)).
+- [ ] **Branch protection** on `dev`, `staging`, and `production` is enabled (see [Branch Strategy](branching-standard.md)).
 - [ ] **CODEOWNERS** file is filled in (see [Code Review](code-review-standard.md)).
 - [ ] **Pull request template** is present (see [Pull Requests](pull-request-standard.md)).
-- [ ] **CI/CD pipeline** runs on pull requests (see [CI/CD](ci-cd-standard.md)).
+- [ ] **Makefile** provides `build`, `lint`, `test`, and `secret-scan` targets (see [CI/CD](ci-cd-standard.md)).
+- [ ] **CI/CD pipeline** runs the Makefile targets on pull requests (see [CI/CD](ci-cd-standard.md)).
 - [ ] **Security scanning** is enabled (see [Security](security-standard.md)).
-- [ ] **Secrets** are configured in the secret store, not committed (see [Secrets Management](secrets-management-standard.md)).
-- [ ] **Release process** is agreed and documented (see [Release Management](release-management-standard.md)).
+- [ ] **Pre-commit secret-scanning hook** is installed and **keys are in the secret store**, not committed (see [Key Management](secrets-management-standard.md)).
+- [ ] **Per-environment keys** are provisioned with spend/rate caps (see [Key Management](secrets-management-standard.md)).
+- [ ] **Release process** and rollback plan are agreed and documented (see [Release Management](release-management-standard.md)).
 - [ ] README describes the project, how to run it, and who owns it.
 
 Once every box is checked, the project is ready for development.

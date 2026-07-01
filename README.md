@@ -1,8 +1,9 @@
 # Tenacious Engineering Standards
 
-The official reference for how we build and operate software at Tenacious. This repository
-documents our standards for GitHub repository setup, project management, branching, pull
-requests, code review, CI/CD, security, secrets management, and releases.
+The official reference for how engineering work moves from a developer's machine to a production release
+at Tenacious. This repository documents the single development-side standard: repository setup, the
+engineering baseline, branch strategy and pull requests, code review, key management, CI/CD, manual and
+automation testing, and release management.
 
 It is published as a documentation site using [MkDocs Material](https://squidfunk.github.io/mkdocs-material/)
 and deployed to GitHub Pages via GitHub Actions.
@@ -17,11 +18,11 @@ and deployed to GitHub Pages via GitHub Actions.
 
 - Every new repository must start from the approved template.
 - External client project repositories must include the client name and project name.
-- Every external client project must have a GitHub team named after the client.
-- All contributors must be added through GitHub Teams - never as individual collaborators.
-- Internal projects must use the internal GitHub team.
-- Access is managed through teams, not individuals.
-- Every project must follow our branch, PR, review, CI/CD, security, secrets, and release standards.
+- All contributors are added through GitHub Teams - never as individual collaborators.
+- Protected branches promote **dev → staging → production**, one direction only - code never skips a stage or flows backward.
+- Passing automated review and required checks is the merge gate; the person merging owns the result.
+- Every environment is isolated, every key is scoped and capped, and no credential ever lives in the repository.
+- A change is validated against stated criteria before promotion - never on "looks fine."
 
 ## Reading the standards
 

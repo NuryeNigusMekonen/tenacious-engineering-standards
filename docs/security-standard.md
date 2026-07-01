@@ -11,7 +11,7 @@ Every repository must have, from the template:
 - **Dependency scanning** enabled (e.g. Dependabot or equivalent) to flag vulnerable dependencies.
 - **Code scanning** enabled (e.g. CodeQL or equivalent) running in CI.
 - **Secret scanning** enabled to catch credentials before they are committed.
-- **Branch protection** on `main` so unreviewed code cannot ship (see the [Branching Standard](branching-standard.md)).
+- **Branch protection** on every protected branch (`dev`, `staging`, `production`) so unreviewed code cannot ship (see the [Branch Strategy](branching-standard.md)).
 
 ## Access control
 
@@ -36,7 +36,7 @@ Every repository must have, from the template:
 
 ## Secrets
 
-Secrets are covered in detail in the [Secrets Management Standard](secrets-management-standard.md).
+Secrets are covered in detail in the [Key Management Standard](secrets-management-standard.md).
 The headline rule: **secrets never live in the repository.** Secret scanning enforces this in CI.
 
 ## Vulnerability response
@@ -44,7 +44,7 @@ The headline rule: **secrets never live in the repository.** Secret scanning enf
 - Report suspected vulnerabilities through the process in `SECURITY.md`.
 - Triage by severity. Critical issues are treated as incidents and fixed with priority.
 - Security fixes still go through a pull request and review, but on an expedited path
-  (see the [Branching Standard](branching-standard.md) hotfix flow).
+  (see the [Branch Strategy](branching-standard.md) hotfix flow).
 - After a fix, confirm scanners are clean and document what happened.
 
 ## CI/CD security
@@ -55,4 +55,4 @@ The headline rule: **secrets never live in the repository.** Secret scanning enf
 
 !!! danger "If you think a secret leaked"
     Treat it as compromised. Rotate it immediately and follow the
-    [Secrets Management Standard](secrets-management-standard.md) - do not wait to confirm.
+    [Key Management Standard](secrets-management-standard.md) - do not wait to confirm.

@@ -14,15 +14,18 @@ use every day. Read it first, then keep the standards bookmarked.
 
 ### Your first change
 
-Follow this flow - it's the same one for every change you'll ever make here:
+Follow this flow - it's the same daily build loop for every change you'll ever make here:
 
-1. Create a branch from `main` following the [Branching Standard](branching-standard.md)
+1. Create a feature branch from `dev` following the [Branch Strategy](branching-standard.md)
    (e.g. `feature/ACME-123-add-export`).
-2. Make your change. Keep secrets out of the code (see [Secrets Management](secrets-management-standard.md)).
-3. Push and open a pull request using the template, following the [Pull Request Standard](pull-request-standard.md).
-4. Make sure CI passes (see the [CI/CD Standard](ci-cd-standard.md)).
-5. Get an approving review (see the [Code Review Standard](code-review-standard.md)).
-6. Squash-merge, and delete your branch.
+2. Make your change. Keep credentials out of the code (see [Key Management](secrets-management-standard.md)).
+3. **Self-check your work** - run automated review and the four-question self-review in the
+   [Engineering Baseline](engineering-baseline-standard.md) before anyone else sees it.
+4. Push and open a pull request into `dev` using the template (see the [Pull Request Standard](pull-request-standard.md)).
+5. Make sure automated review is addressed and CI passes - that's the merge gate (see [CI/CD](ci-cd-standard.md)).
+6. Squash-merge into `dev`, and delete your branch.
+7. Before promotion to staging, the change is validated against stated criteria (see [Manual Testing](manual-testing-standard.md)),
+   then promoted `dev → staging → production` (see [Release Management](release-management-standard.md)).
 
 Every change follows this loop, regardless of size.
 
@@ -51,7 +54,7 @@ before development begins.
 
 This site is just Markdown. To propose a change:
 
-1. Branch from `main`.
+1. Branch from `dev`.
 2. Edit or add a file in [`docs/`](https://github.com/NuryeNigusMekonen/tenacious-engineering-standards/tree/main/docs).
 3. If you add a page, register it under `nav:` in `mkdocs.yml`.
 4. Open a PR following the [Pull Request Standard](pull-request-standard.md).

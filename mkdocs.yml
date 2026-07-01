@@ -86,13 +86,16 @@ nav:
   - Onboarding Guide: onboarding-guide.md
   - Standards:
       - Repository Management: repository-management-standard.md
-      - Branching: branching-standard.md
+      - Engineering Baseline: engineering-baseline-standard.md
+      - Branch Strategy: branching-standard.md
       - Pull Requests: pull-request-standard.md
       - Code Review: code-review-standard.md
+      - Key Management: secrets-management-standard.md
       - CI/CD: ci-cd-standard.md
-      - Security: security-standard.md
-      - Secrets Management: secrets-management-standard.md
+      - Manual Testing: manual-testing-standard.md
+      - Automation Testing: automation-testing-standard.md
       - Release Management: release-management-standard.md
+      - Security: security-standard.md
 
 extra:
   social:

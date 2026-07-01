@@ -1,21 +1,44 @@
 # Code Review Standard
 
-Code review protects quality and spreads knowledge across the team. This standard defines what authors
-and reviewers are responsible for.
+Review at Tenacious happens in two layers: the engineer's own **self-review and automated review** before a
+PR opens (the merge gate), and **optional teammate review** that adds a second perspective. This standard
+defines both and how they fit together.
 
-## Every change is reviewed
+## The two layers of review
 
-- At least **one approving review** is required before merging to `main`.
-- Reviews are required by branch protection and cannot be bypassed (see the [Branching Standard](branching-standard.md)).
-- Reviewers are routed automatically through **CODEOWNERS** so the right people are asked.
+1. **Self-review + automated review (the gate).** Before opening a PR, the engineer runs the
+   [Engineering Baseline](engineering-baseline-standard.md): automated review (CodeRabbit or equivalent)
+   plus the four-question human self-review. Automated review then runs again on the PR. **Passing
+   automated review and required checks is the merge gate** (see the [Pull Request Standard](pull-request-standard.md)).
+2. **Teammate review (optional).** A human approval is **not required** to merge. A teammate may still
+   review and weigh in — and for higher-risk areas, should be asked to.
 
-For higher-risk areas (security, payments, infrastructure), require review from the relevant code owners.
+!!! note "The person merging owns the result"
+    Automated review is the gate, not a guarantee. Whoever merges is accountable for the change in the
+    environment it lands in.
 
-## Reviews route through CODEOWNERS
+## Automated review is addressed in full
 
-Every repository has a `CODEOWNERS` file (provided by the template) mapping paths to the teams
-responsible for them. Because access is managed through teams, ownership is too - assign ownership to
-**teams**, not individuals, so reviews don't block on one person.
+- Automated review (e.g. CodeRabbit, Copilot) runs on every PR.
+- The author addresses **every** comment it raises — fix it, or reply with the reason it doesn't apply.
+- **Nothing is left unanswered.** An open automated-review comment is unfinished work.
+
+## When to pull in a teammate
+
+Even though human approval isn't gated, ask a teammate to look when the change touches:
+
+- **Security, authentication, or authorization**
+- **Payments or billing**
+- **Shared utilities, data migrations, or infrastructure**
+- **Personal data (PII)**, or **prompt changes that affect other agent flows**
+
+Route these through **CODEOWNERS** so the right people are asked automatically.
+
+### Reviews route through CODEOWNERS
+
+Every repository has a `CODEOWNERS` file (provided by the template) mapping paths to the teams responsible
+for them. Because access is managed through teams, ownership is too — assign ownership to **teams**, not
+individuals, so a request never blocks on one person.
 
 ```
 # Example CODEOWNERS
@@ -24,34 +47,20 @@ responsible for them. Because access is managed through teams, ownership is too 
 /infra/             @tenacious/platform-team
 ```
 
-## What reviewers check
+## What a reviewer checks
 
-- **Correctness** - does it do what it claims, including edge cases?
-- **Readability** - will the next engineer understand this in six months?
-- **Tests** - is the change covered, and do the tests actually test the behavior?
-- **Security** - no injected vulnerabilities, no secrets, input is validated (see [Security](security-standard.md)).
-- **Standards** - does it follow our branching, PR, and CI/CD standards?
-- **Scope** - does the PR do one thing, or should it be split?
+Whether it's automated review or a teammate, review looks at the same things:
 
-## How to give a good review
+- **Correctness** — does it do what it claims, including edge cases?
+- **Requirement match** — does it solve the *stated* problem (see the [Engineering Baseline](engineering-baseline-standard.md#human-self-review))?
+- **Readability** — will the next engineer understand this in six months?
+- **Tests** — is the change covered, and do the tests actually prove the behavior (see the [Manual Testing Framework](manual-testing-standard.md))?
+- **Security** — no injected vulnerabilities, no secrets, input is validated (see [Security](security-standard.md)).
+- **Scope** — does the PR do one thing, or should it be split?
+
+## How to give a good teammate review
 
 - Be specific and kind. Critique the code, not the person.
 - Distinguish **blocking** issues from **suggestions**. Prefix non-blocking comments with `nit:`.
 - Explain *why*, and propose an alternative where you can.
-- Approve when the change is good enough to ship - not only when it is perfect.
-- Review promptly. A PR waiting on review is blocked work.
-
-## Author responsibilities
-
-- Keep the PR small and well-described (see the [Pull Request Standard](pull-request-standard.md)).
-- Respond to every comment; resolve it or explain your reasoning.
-- Re-request review after addressing feedback.
-- Don't merge with unresolved blocking comments.
-
-## Review turnaround
-
-- Aim to give a first review within **one business day**.
-- Hotfixes get an **immediate** review (see the [Branching Standard](branching-standard.md)).
-
-!!! note "Approving means you share ownership"
-    When you approve a PR, you are vouching for it. Review as if you'll be on call for the result.
+- Review promptly — aim for a first pass within **one business day**; hotfixes get an **immediate** look.
