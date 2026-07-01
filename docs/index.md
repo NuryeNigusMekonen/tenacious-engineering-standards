@@ -35,11 +35,11 @@ should look and behave the same way. Consistency is what lets us move quickly wi
 
 The standards follow the path a change takes from a developer's machine to production:
 
-1. **Write and self-check** — the [Engineering Baseline](engineering-baseline-standard/).
-2. **Open a PR and merge into protected branches** — [Branch Strategy](branching-standard/) and [Pull Requests](pull-request-standard/).
-3. **The infrastructure that makes environments safe** — [Key Management](secrets-management-standard/) and [CI/CD](ci-cd-standard/).
-4. **Prove the change works** — [Manual Testing](manual-testing-standard/) then [Automation Testing](automation-testing-standard/).
-5. **Ship it** — [Release Management](release-management-standard/).
+1. **Write and self-check** - the [Engineering Baseline](engineering-baseline-standard/).
+2. **Open a PR and merge into protected branches** - [Branch Strategy](branching-standard/) and [Pull Requests](pull-request-standard/).
+3. **The infrastructure that makes environments safe** - [Key Management](secrets-management-standard/) and [CI/CD](ci-cd-standard/).
+4. **Prove the change works** - [Manual Testing](manual-testing-standard/) then [Automation Testing](automation-testing-standard/).
+5. **Ship it** - [Release Management](release-management-standard/).
 
 ## Explore the standards
 

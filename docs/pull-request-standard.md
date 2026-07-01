@@ -6,7 +6,7 @@ the [Branch Strategy](branching-standard.md) standard.
 
 ## When to open a PR
 
-- Open a PR for **every** change merged into a protected branch — features, fixes, docs, and chores alike.
+- Open a PR for **every** change merged into a protected branch - features, fixes, docs, and chores alike.
 - Open it early as a **draft** if you want CI feedback or early discussion before the work is finished.
 - Mark it ready only when it is complete, self-reviewed (see the [Engineering Baseline](engineering-baseline-standard.md)),
   and CI is green.
@@ -22,7 +22,7 @@ Small PRs are reviewed faster, more thoroughly, and merged sooner. A good PR doe
 ## PR description
 
 Every PR uses the repository's pull request template. The description is **what changed and why, in plain
-language — not a restatement of the diff.** A good description includes:
+language - not a restatement of the diff.** A good description includes:
 
 - **What** - a short summary of the change.
 - **Why** - the motivation or the ticket it resolves (link the issue, e.g. `Closes ACME-123`).
@@ -52,9 +52,9 @@ Read-only feature. Revert the PR to disable.
 
 A PR is gated on **automated review and required status checks**, not on a human approval.
 
-- [ ] **Automated review has run** (e.g. CodeRabbit, Copilot) and every comment is addressed — fixed, or
+- [ ] **Automated review has run** (e.g. CodeRabbit, Copilot) and every comment is addressed - fixed, or
       answered with the reason it doesn't apply. **Nothing is left unanswered.**
-- [ ] **CI checks pass** — build, lint/format, tests, and secret scan (see the [CI/CD Standard](ci-cd-standard.md)).
+- [ ] **CI checks pass** - build, lint/format, tests, and secret scan (see the [CI/CD Standard](ci-cd-standard.md)).
 - [ ] The branch is up to date with its target branch.
 - [ ] No secrets or sensitive data are included (see [Key Management](secrets-management-standard.md)).
 
@@ -67,7 +67,7 @@ A teammate **may** review and weigh in, but a human approval is **not** required
 ## Merging
 
 - **Squash and merge** is the default, producing one clean commit on the target branch.
-- The squash commit message must be meaningful — it becomes the permanent history entry and feeds release notes.
+- The squash commit message must be meaningful - it becomes the permanent history entry and feeds release notes.
 - Delete the branch after merge.
 
 ## Authoring etiquette
