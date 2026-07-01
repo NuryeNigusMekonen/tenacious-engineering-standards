@@ -1,4 +1,4 @@
-# Branch Strategy & Pull Requests
+# Branch Strategy
 
 This standard defines how code moves from a developer's machine into production. Protected branches map
 one-to-one to environments and promote in one direction only: **dev → staging → production**. Code never

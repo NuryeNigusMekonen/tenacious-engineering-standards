@@ -87,7 +87,7 @@ nav:
   - Standards:
       - Repository Management: repository-management-standard.md
       - Engineering Baseline: engineering-baseline-standard.md
-      - Branch Strategy & Pull Requests: branching-standard.md
+      - Branch Strategy: branching-standard.md
       - Pull Requests: pull-request-standard.md
       - Code Review: code-review-standard.md
       - Key Management: secrets-management-standard.md

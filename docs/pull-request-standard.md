@@ -2,7 +2,7 @@
 
 Every merge into a protected branch (`dev`, `staging`, `production`) arrives through a pull request (PR).
 This standard defines how to open, describe, and merge them. The branch model and promotion rules live in
-the [Branch Strategy & Pull Requests](branching-standard.md) standard.
+the [Branch Strategy](branching-standard.md) standard.
 
 ## When to open a PR
 
