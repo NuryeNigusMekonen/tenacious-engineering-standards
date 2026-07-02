@@ -1,7 +1,7 @@
 # Manual Testing
 
-Manual testing is the human validation gate before a change moves between environments. A tester,
-developer, or product owner uses the software against stated criteria and records what happened.
+Manual testing is the human validation gate before a change moves between environments. A tester or QA
+engineer, with Tech Lead oversight, uses the software against stated criteria and records what happened.
 
 It comes after the change is built and self-reviewed (see the
 [Engineering Baseline](engineering-baseline-standard.md)) and before promotion through the
@@ -107,11 +107,8 @@ Any failed manual test that is not fixed immediately must be logged as a defect.
 
 | Role | Responsibility |
 | --- | --- |
-| **Engineer** | Self-checks the change, provides test notes in the PR, and supports reproduction. |
-| **Tech Lead** | Confirms the manual test scope is enough for promotion and accepts residual technical risk. |
-| **QA / Tester** | Designs and runs manual cases where the project has QA coverage. |
-| **Product Owner** | Confirms business acceptance and accepts product risk when a known issue is deferred. |
-| **Release owner** | Ensures manual evidence exists before approving release movement. |
+| **Tester / QA Engineer** | Designs, runs, and records manual test cases, logs defects, and recommends whether the change is ready for promotion. |
+| **Tech Lead** | Confirms the manual test scope is sufficient for promotion and accepts residual technical risk. |
 
 ## LLM and RAG checks
 

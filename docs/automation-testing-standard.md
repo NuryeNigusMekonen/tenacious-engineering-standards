@@ -11,13 +11,13 @@ stable, and worth checking repeatedly.
 
 | Test type | What it checks | Typical owner |
 | --- | --- | --- |
-| **Unit test** | One small function, class, module, or component in isolation. | Developer |
-| **Integration test** | Multiple parts working together, such as service + database or API + queue. | Developer / QA |
-| **API test** | Request/response behavior, contracts, auth, errors, and data shape. | Developer / QA |
-| **End-to-end test** | A full user journey through the app, often in a browser. | QA / Developer |
-| **Smoke test** | A small critical-path check that proves a build is testable. | QA / Developer |
-| **Regression test** | Previously working behavior that must not break. | QA / Developer |
-| **LLM / eval test** | Model output scored against a golden set, rubric, or deterministic expectation. | QA / AI owner |
+| **Unit test** | One small function, class, module, or component in isolation. | Tester / QA Engineer |
+| **Integration test** | Multiple parts working together, such as service + database or API + queue. | Tester / QA Engineer |
+| **API test** | Request/response behavior, contracts, auth, errors, and data shape. | Tester / QA Engineer |
+| **End-to-end test** | A full user journey through the app, often in a browser. | Tester / QA Engineer |
+| **Smoke test** | A small critical-path check that proves a build is testable. | Tester / QA Engineer |
+| **Regression test** | Previously working behavior that must not break. | Tester / QA Engineer |
+| **LLM / eval test** | Model output scored against a golden set, rubric, or deterministic expectation. | Tester / QA Engineer |
 
 Unit, integration, API, and end-to-end tests are all automation tests when they are run by a tool and produce
 an objective result.
@@ -104,7 +104,7 @@ integration contract, or frozen task set item.
 | **Naming** | Test names describe the behavior, not the implementation. |
 | **Location** | Tests live with the code or in the project-approved test directory. |
 | **Data** | Test data is repeatable, safe, and does not depend on uncontrolled production state. |
-| **Owner** | The team that owns the feature owns the automated tests for it. |
+| **Owner** | The Tester / QA Engineer owns the automated tests for the feature, while the Tech Lead is accountable for test strategy, review, and release readiness. |
 | **Failure** | A failing required test blocks merge or promotion until fixed, removed with justification, or explicitly risk-accepted. |
 
 ## LLM automation handoff
