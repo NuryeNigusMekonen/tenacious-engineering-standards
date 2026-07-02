@@ -1,0 +1,320 @@
+/* ===== Tenacious Engineering Standards - brand + landing page ===== */
+
+/* Brand palette taken from the Tenacious Intelligence firefly logo:
+   purple mark #5B52A8, navy wordmark #1F2A6E */
+:root {
+  --md-primary-fg-color:        #1F2A6E;  /* navy - header / primary */
+  --md-primary-fg-color--light: #5B52A8;  /* purple */
+  --md-primary-fg-color--dark:  #161E54;
+  --md-accent-fg-color:         #5B52A8;  /* purple - links / accents */
+  --ten-purple:                 #5B52A8;
+  --ten-navy:                   #1F2A6E;
+  --ten-radius: 14px;
+  --ten-border: var(--md-default-fg-color--lightest);
+}
+
+/* Slightly tighter, more "product" heading rhythm */
+.md-typeset h1 {
+  font-weight: 800;
+  letter-spacing: -0.02em;
+}
+.md-typeset h2 {
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+
+/* ---------- Landing page layout ---------- */
+/* When nav + toc are hidden (home page), the content area spans the full grid.
+   Constrain and center it so the page reads like a real landing page instead of
+   a wide, left-biased column. */
+.ten-page {
+  max-width: 960px;
+  margin: 0 auto;
+}
+.ten-page > h2 {
+  text-align: center;
+  border-bottom: none;
+  margin-top: 3rem;
+}
+.ten-page > p,
+.ten-page > ul {
+  max-width: 720px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* ---------- Hero ---------- */
+.ten-hero {
+  position: relative;
+  margin: -1.2rem 0 2.5rem;
+  padding: 4rem 1.5rem 3.5rem;
+  border-radius: var(--ten-radius);
+  text-align: center;
+  color: #fff;
+  background:
+    radial-gradient(1200px 400px at 50% -10%, rgba(91, 82, 168, 0.65), transparent 60%),
+    linear-gradient(135deg, #161E54 0%, #1F2A6E 50%, #5B52A8 100%);
+  overflow: hidden;
+}
+.ten-hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.06) 1px, transparent 1px);
+  background-size: 32px 32px;
+  mask-image: radial-gradient(60% 80% at 50% 0%, #000, transparent 75%);
+  pointer-events: none;
+}
+/* Lay the hero out as a centered column so every child - logo, title,
+   subtitle, buttons - is horizontally centered regardless of how the
+   markdown="1" processor wraps them. This is the robust fix for the logo
+   drifting left. */
+.ten-hero > * {
+  position: relative;
+  z-index: 1;
+}
+.ten-hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Neutralize .md-typeset's max-width / margin bias on any <p> wrappers
+   the markdown processor inserts inside the hero. */
+.ten-hero p,
+.md-typeset .ten-hero p {
+  max-width: none;
+  margin-left: 0;
+  margin-right: 0;
+  text-align: center;
+}
+
+.ten-hero-logo {
+  display: inline-block;
+  margin: 0 0 1.6rem;
+  padding: 1rem 1.6rem;
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 12px 34px rgba(0, 0, 0, 0.28);
+}
+.ten-hero-logo img {
+  display: block;
+  height: 64px;
+  width: auto;
+}
+
+.ten-hero .ten-eyebrow {
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  font-size: 0.72rem;
+  font-weight: 700;
+  opacity: 0.85;
+  margin: 0 0 0.6rem;
+}
+.ten-hero h1 {
+  color: #fff;
+  font-size: 2.5rem;
+  line-height: 1.1;
+  margin: 0 auto 0.8rem;
+  max-width: 18ch;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+}
+.ten-hero p.ten-sub {
+  color: rgba(255, 255, 255, 0.92);
+  font-size: 1.05rem;
+  max-width: 56ch;
+  margin: 0 auto 1.8rem;
+}
+
+/* Hero buttons */
+.ten-cta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  justify-content: center;
+}
+.ten-cta .md-button {
+  border-radius: 999px;
+  padding: 0.62rem 1.6rem;
+  font-weight: 700;
+  border-width: 2px;
+  transition: transform 0.15s ease, box-shadow 0.15s ease,
+              background 0.15s ease, color 0.15s ease, border-color 0.15s ease;
+}
+
+/* Primary: solid white pill with a soft shadow that lifts on hover */
+.ten-cta .md-button--primary {
+  background: #fff;
+  color: var(--ten-navy);
+  border-color: #fff;
+  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.28);
+}
+.ten-cta .md-button--primary:hover {
+  background: #fff;
+  color: var(--ten-purple);
+  transform: translateY(-2px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.36);
+}
+
+/* Secondary: glassy outline that fills in on hover */
+.ten-cta .md-button:not(.md-button--primary) {
+  color: #fff;
+  border-color: rgba(255, 255, 255, 0.7);
+  background: rgba(255, 255, 255, 0.06);
+  backdrop-filter: blur(2px);
+}
+.ten-cta .md-button:not(.md-button--primary):hover {
+  background: rgba(255, 255, 255, 0.16);
+  border-color: #fff;
+  color: #fff;
+  transform: translateY(-2px);
+}
+
+/* ---------- Feature cards ---------- */
+.ten-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem;
+  margin: 1.5rem 0 2rem;
+}
+.ten-card {
+  display: block;
+  padding: 1.25rem 1.25rem 1.1rem;
+  border: 1px solid var(--ten-border);
+  border-left: 3px solid var(--ten-border);
+  border-radius: var(--ten-radius);
+  background: var(--md-default-bg-color);
+  transition: transform 0.15s ease, box-shadow 0.15s ease, border-color 0.15s ease;
+  color: inherit !important;
+  text-decoration: none !important;
+}
+.ten-card:hover {
+  transform: translateY(-3px);
+  border-color: var(--ten-purple);
+  border-left-color: var(--ten-purple);
+  box-shadow: 0 10px 30px rgba(91, 82, 168, 0.18);
+}
+.ten-card h3 {
+  margin: 0 0 0.35rem;
+  font-size: 1rem;
+  font-weight: 700;
+}
+.ten-card p {
+  margin: 0;
+  font-size: 0.83rem;
+  color: var(--md-default-fg-color--light);
+  line-height: 1.45;
+}
+
+@media screen and (max-width: 44.9em) {
+  .ten-hero h1 { font-size: 1.9rem; }
+  .ten-hero { padding: 2.75rem 1rem 2.5rem; }
+}
+
+/* ---------- Content pages: readability polish ---------- */
+
+/* Comfortable reading measure + rhythm */
+.md-typeset { line-height: 1.7; }
+.md-typeset p:not(.ten-sub),
+.md-typeset li { max-width: 74ch; }
+
+/* Page title gets a touch more presence and a branded underline accent. */
+.md-typeset h1 {
+  font-size: 2.1rem;
+  margin-bottom: 1.4rem;
+  padding-bottom: 0.6rem;
+  border-bottom: 3px solid var(--ten-purple);
+  display: inline-block;
+}
+
+/* The home-page hero title must stay centered and unstyled by the rule above. */
+.ten-hero h1 {
+  display: block;
+  border-bottom: none;
+  padding-bottom: 0;
+  margin: 0 auto 0.8rem;
+  font-size: 2.5rem;
+}
+
+/* Lead paragraph: the first paragraph after the H1 reads as a calm intro */
+.md-typeset h1 + p:not(.ten-sub) {
+  font-size: 1.12rem;
+  line-height: 1.6;
+  color: var(--md-default-fg-color--light);
+  max-width: 70ch;
+}
+
+/* Section headings: clear separation without heavy lines */
+.md-typeset h2 {
+  margin-top: 2.6rem;
+  padding-bottom: 0.35rem;
+  border-bottom: 1px solid var(--ten-border);
+}
+.md-typeset h3 { margin-top: 1.8rem; }
+
+/* Inline code: subtle brand tint so it reads as "literal" without shouting */
+.md-typeset code {
+  background: rgba(91, 82, 168, 0.10);
+  border-radius: 6px;
+  padding: 0.1em 0.35em;
+}
+.md-typeset pre code { background: none; padding: 0; }
+
+/* Tables: lighter, card-like, with zebra rows and a branded header */
+.md-typeset table:not([class]) {
+  border: 1px solid var(--ten-border);
+  border-radius: var(--ten-radius);
+  overflow: hidden;
+  box-shadow: 0 2px 10px rgba(31, 42, 110, 0.05);
+}
+.md-typeset table:not([class]) th {
+  background: rgba(31, 42, 110, 0.05);
+  font-weight: 700;
+}
+.md-typeset table:not([class]) tr:nth-child(2n) td {
+  background: var(--md-default-fg-color--lightest);
+}
+
+/* Admonitions: rounder corners and a softer card feel */
+.md-typeset .admonition,
+.md-typeset details {
+  border-radius: var(--ten-radius);
+  border-width: 1px;
+  box-shadow: 0 2px 12px rgba(31, 42, 110, 0.06);
+}
+
+/* Task lists / checklists: clearer, roomier line spacing */
+.md-typeset .task-list-item { margin-bottom: 0.35rem; }
+.md-typeset .task-list-control { margin-right: 0.2rem; }
+
+/* Links inside content stay on-brand and underline on hover for clarity */
+.md-typeset a {
+  color: var(--ten-purple);
+  text-decoration-color: rgba(91, 82, 168, 0.35);
+}
+.md-typeset a:hover { text-decoration: underline; }
+
+/* Roomier lists so multi-line standards bullets breathe */
+.md-typeset ul li,
+.md-typeset ol li { margin-bottom: 0.4rem; }
+
+/* Permalink anchors: hidden until you hover the heading, in brand purple */
+.md-typeset .headerlink { color: var(--ten-border); transition: color 0.15s ease; }
+.md-typeset h1:hover .headerlink,
+.md-typeset h2:hover .headerlink,
+.md-typeset h3:hover .headerlink { color: var(--ten-purple); }
+
+/* Code blocks: soft border + rounded corners so they sit as tidy cards */
+.md-typeset pre > code {
+  border-radius: var(--ten-radius);
+}
+.md-typeset .highlight {
+  border-radius: var(--ten-radius);
+  box-shadow: 0 2px 12px rgba(31, 42, 110, 0.06);
+}
+
+/* Footer prev/next nav: a little more padding for an easier target */
+.md-footer__inner { padding: 1rem 0.2rem; }
