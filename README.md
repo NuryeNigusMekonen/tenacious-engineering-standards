@@ -47,7 +47,8 @@ Then open <http://127.0.0.1:8000>.
 
 ## How to contribute
 
-1. Create a branch from `main` following the [Branching Standard](docs/branching-standard.md).
+1. Create a branch from `main` following the [Branch Strategy](docs/branching-standard.md) naming
+   conventions (this docs repo has no environments, so it uses a single protected branch).
 2. Edit or add Markdown files in `docs/`.
 3. If you add a new page, register it under `nav:` in [`mkdocs.yml`](mkdocs.yml).
 4. Open a pull request following the [Pull Request Standard](docs/pull-request-standard.md).

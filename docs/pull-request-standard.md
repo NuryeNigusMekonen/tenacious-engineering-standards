@@ -1,4 +1,4 @@
-# Pull Request Standard
+# Pull Requests
 
 Every merge into a protected branch (`dev`, `staging`, `production`) arrives through a pull request (PR).
 This standard defines how to open, describe, and merge them. The branch model and promotion rules live in

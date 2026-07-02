@@ -1,4 +1,4 @@
-# Code Review Standard
+# Code Review
 
 Review at Tenacious happens in two layers: the engineer's own **self-review and automated review** before a
 PR opens (the merge gate), and **optional teammate review** that adds a second perspective. This standard

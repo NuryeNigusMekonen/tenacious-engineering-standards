@@ -1,4 +1,4 @@
-# Security Standard
+# Security
 
 Security is everyone's responsibility, and it is built in from the first commit - not bolted on later.
 This standard defines the baseline security requirements for every Tenacious repository.
