@@ -54,7 +54,8 @@ before development begins.
 
 This site is just Markdown. To propose a change:
 
-1. Branch from `dev`.
+1. Branch from `main` - this documentation repo has no deployment environments, so per the
+   [Branch Strategy](branching-standard.md) it collapses to a single protected branch.
 2. Edit or add a file in [`docs/`](https://github.com/NuryeNigusMekonen/tenacious-engineering-standards/tree/main/docs).
 3. If you add a page, register it under `nav:` in `mkdocs.yml`.
 4. Open a PR following the [Pull Request Standard](pull-request-standard.md).

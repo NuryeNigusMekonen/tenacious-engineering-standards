@@ -10,6 +10,12 @@ step deploys what staging approved - it introduces no new approval.
 
 ## Approval chain
 
+```mermaid
+flowchart LR
+  D["Dev<br/>validated by the engineer"] -->|"Tech Lead approves"| S["Staging<br/>validated by the Tech Lead"]
+  S -->|"Tech Lead + Project Owner<br/>(the release gate)"| P["Production<br/>execution only"]
+```
+
 | Stage | Validated by | Approved by |
 | --- | --- | --- |
 | **Dev** | Engineer who built the change | Tech Lead (with DevOps if the role exists) |

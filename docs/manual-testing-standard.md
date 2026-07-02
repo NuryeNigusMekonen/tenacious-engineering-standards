@@ -1,9 +1,9 @@
-# Internal Manual Testing Framework
+# Manual Testing Framework
 
-Manual validation is the **current operating gate on the development side**: structured manual validation
-before a change is promoted between environments. It comes after the change is built and self-reviewed
-(see the [Engineering Baseline](engineering-baseline-standard.md)) and before promotion (see the
-[Branch Strategy](branching-standard.md)).
+Manual validation is the **current operating gate on the development side**: every change is checked in a
+structured way before it is promoted between environments. It comes after the change is built and
+self-reviewed (see the [Engineering Baseline](engineering-baseline-standard.md)) and before promotion (see
+the [Branch Strategy](branching-standard.md)).
 
 ## Two categories that always travel together
 

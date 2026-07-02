@@ -9,6 +9,17 @@ skips a stage and never flows backward.
 Feature branches are cut from `dev` and merge back into `dev` via pull request. Each protected branch
 deploys to exactly one environment.
 
+```mermaid
+flowchart LR
+  F["feature/*"] -->|"PR + automated review"| D["dev"]
+  D -->|"Tech Lead approves"| S["staging"]
+  S -->|"Tech Lead + Project Owner"| P["production"]
+  P -->|"cut"| H["hotfix/*"]
+  H -->|"PR"| P
+  H -.->|"merge back down"| S
+  H -.->|"merge back down"| D
+```
+
 | Branch | Deploys to | Merges from | Protection |
 | --- | --- | --- | --- |
 | `production` | Production | `staging` only | No direct push. PR required; promotion approved jointly by the Tech Lead and Project Owner. |

@@ -1,4 +1,4 @@
-# Automation Test Standard - and When to Start
+# Automation Testing
 
 Manual validation (see the [Manual Testing Framework](manual-testing-standard.md)) comes first. Automation
 is built **when manual checking becomes the bottleneck** - when the frozen task set is large enough and

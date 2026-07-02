@@ -1,4 +1,4 @@
-# CI/CD Standard
+# CI/CD
 
 CI/CD is the infrastructure that makes environments safe. Automation is what lets us trust that a branch
 is promotable to its next environment.

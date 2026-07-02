@@ -1,4 +1,4 @@
-# Repository Management Standard
+# Repository Management
 
 This standard defines how repositories are created, named, owned, and accessed at Tenacious.
 It is the first standard to read before starting any project.
