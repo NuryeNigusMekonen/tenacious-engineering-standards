@@ -54,7 +54,7 @@ Whether it's automated review or a teammate, review looks at the same things:
 - **Correctness** - does it do what it claims, including edge cases?
 - **Requirement match** - does it solve the *stated* problem (see the [Engineering Baseline](engineering-baseline-standard.md#human-self-review))?
 - **Readability** - will the next engineer understand this in six months?
-- **Tests** - is the change covered, and do the tests actually prove the behavior (see the [Manual Testing Framework](manual-testing-standard.md))?
+- **Tests** - is the change covered, and do the tests actually prove the behavior (see [Manual Testing](manual-testing-standard.md))?
 - **Security** - no injected vulnerabilities, no secrets, input is validated (see [Security](security-standard.md)).
 - **Scope** - does the PR do one thing, or should it be split?
 

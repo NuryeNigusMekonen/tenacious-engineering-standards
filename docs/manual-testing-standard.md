@@ -1,49 +1,145 @@
-# Manual Testing Framework
+# Manual Testing
 
-Manual validation is the **current operating gate on the development side**: every change is checked in a
-structured way before it is promoted between environments. It comes after the change is built and
-self-reviewed (see the [Engineering Baseline](engineering-baseline-standard.md)) and before promotion (see
-the [Branch Strategy](branching-standard.md)).
+Manual testing is the human validation gate before a change moves between environments. A tester,
+developer, or product owner uses the software against stated criteria and records what happened.
 
-## Two categories that always travel together
+It comes after the change is built and self-reviewed (see the
+[Engineering Baseline](engineering-baseline-standard.md)) and before promotion through the
+[Branch Strategy](branching-standard.md).
 
-| Category | What manual validation covers |
+## What manual testing proves
+
+Manual testing must prove that the change works for the user, not only that the code runs.
+
+| Area | What to check |
 | --- | --- |
-| **Non-LLM behavior** | Functional and end-to-end paths: integrations (e.g. GHL, Twilio), auth, data flows, the full user/lead journey. **Deterministic** - a defined input has a defined correct output. |
-| **LLM + RAG behavior** | Model-driven features: generation quality, sentiment/classification, qualification or suggestion logic, and retrieval quality. Judged against **agreed criteria**, not a single correct string. |
+| **Functional behavior** | The feature does what the requirement, ticket, or acceptance criteria says it should do. |
+| **End-to-end flow** | The user journey works across screens, services, integrations, and data changes. |
+| **Regression risk** | Existing important behavior still works after the change. |
+| **Usability and visual fit** | The experience is understandable, accessible enough for the context, and not visually broken. |
+| **LLM / RAG behavior** | Model outputs satisfy agreed criteria for accuracy, relevance, grounding, safety, and tone. |
 
-Every feature is validated across both categories where both apply - you do not sign off deterministic
-paths and skip the model-driven ones, or vice versa.
+Every feature is checked across all areas that apply. Do not sign off a deterministic path and skip the
+model-driven part, or validate the model output while ignoring the surrounding user journey.
 
-## Validation runs before promotion
+## When manual testing is required
 
-- Validation runs **before promotion** between environments (dev → staging → production).
-- A change is checked against the four self-review questions in the [Engineering Baseline](engineering-baseline-standard.md#human-self-review)
-  **plus** the category checks above.
-- **A change is not promoted on "looks fine."** It is checked against stated criteria.
+Manual testing is required before promotion from `dev` to `staging` and before release from `staging` to
+`production`, unless an automated suite already covers the exact release gate and the release owner accepts
+the remaining risk.
 
-## The frozen task set is a required deliverable
+Manual testing is especially required when:
 
-For any feature with LLM behavior, the team builds a **fixed bank of 20–40 real inputs with agreed
-pass/fail criteria.** This is the load-bearing artifact of the framework:
+- the feature is new or still changing;
+- the expected result requires human judgment;
+- the change affects a user journey, integration, data flow, or AI/LLM behavior;
+- there is no trusted automated coverage yet;
+- a defect fix needs retesting.
 
-- It makes manual judgment **repeatable** - the same inputs, the same criteria, every time.
-- It is the **explicit handoff into automation** (see the [Automation Test Standard](automation-testing-standard.md)).
-- It is **version-controlled** and **grows with the product** - it is not optional.
+## Minimum test case format
 
-### Building the frozen task set - step by step
+A manual test case is a small, repeatable check. It does not need to be bureaucratic, but it must be clear
+enough for another person to run.
 
-1. **Collect real inputs.** Pull 20–40 representative inputs from actual usage or realistic scenarios - not
-   toy examples. Cover the common path, the edge cases, and the known failure modes.
-2. **Write pass/fail criteria for each.** For deterministic inputs, the criterion is the exact/structural
-   correct output. For model-driven inputs, the criterion is what a good answer must and must not do - the
-   qualities that make it acceptable, since there is no single correct string.
-3. **Freeze it.** Commit the input bank and its criteria to version control. This is the reference set.
-4. **Run it before each promotion.** Record each input as pass / fail / risk against its criteria, with
-   notes on any fix or deferral.
-5. **Grow it.** When the product gains behavior or a new failure mode is found, add inputs and criteria.
-   The set expands; it is never quietly shrunk.
+| Field | Required content |
+| --- | --- |
+| **ID / Name** | A short identifier, such as `TC-LOGIN-001` or `Valid login redirects to dashboard`. |
+| **Requirement or ticket** | The story, issue, requirement, or risk the test covers. |
+| **Preconditions** | The state needed before testing, such as user role, data, environment, or account setup. |
+| **Steps** | The exact actions to perform. |
+| **Expected result** | What should happen if the software is correct. |
+| **Actual result** | What happened during execution. |
+| **Status** | `Pass`, `Fail`, `Blocked`, or `Risk Accepted`. |
+| **Evidence** | Screenshot, recording, log, response payload, report link, or written observation. |
 
-!!! note "Why frozen"
-    A fixed, version-controlled set is what turns subjective "it looked good" into a repeatable check -
-    and it is exactly the dataset automation inherits when manual runs become the bottleneck.
+## Standard records and tools
+
+Each project chooses the exact tool during setup, but the records below are mandatory. A team may use a
+test management tool, the project tracker, GitHub issues, Basecamp, or version-controlled Markdown as long
+as the required information is easy to find during review and release.
+
+| Record | Required use | Acceptable tools |
+| --- | --- | --- |
+| **Test cases** | Store the checks that prove a feature, defect fix, or release path. | Test management tool, project tracker, GitHub issues, Markdown in the repo. |
+| **Execution results** | Record pass/fail/blocked/risk status for each planned check. | Test run record, PR checklist, release tracker, spreadsheet only if linked from the release record. |
+| **Defects** | Track failed behavior from discovery to verified closure. | Project tracker, GitHub issues, Basecamp, client-approved defect tool. |
+| **Evidence** | Preserve proof behind the result. | Screenshots, screen recordings, logs, API payloads, CI links, exported reports. |
+| **Frozen task set** | Version LLM/RAG inputs and criteria. | Repository file, eval dataset, or test management tool with exportable records. |
+
+Testing records must link back to the requirement, issue, PR, or release they support. If someone cannot
+trace what was tested and why, the record is not complete.
+
+## Defect report format
+
+Any failed manual test that is not fixed immediately must be logged as a defect.
+
+| Field | Required content |
+| --- | --- |
+| **Summary** | One clear sentence describing the failure. |
+| **Environment / build** | Where it happened, including branch, version, device, browser, or API environment. |
+| **Steps to reproduce** | Exact actions or request payload needed to trigger the issue. |
+| **Expected result** | What should have happened. |
+| **Actual result** | What happened instead. |
+| **Evidence** | Screenshot, recording, log, response, or trace. |
+| **Severity** | Impact on the system or user: `Critical`, `High`, `Medium`, or `Low`. |
+| **Priority** | Business urgency: `Urgent`, `High`, `Medium`, or `Low`. |
+| **Owner / status** | Who owns the next action and whether it is new, in progress, fixed, retest, closed, or deferred. |
+
+## How to run manual testing
+
+1. **Confirm the scope.** Identify the changed feature, affected user journeys, integrations, data, and
+   known risks.
+2. **Write or update test cases.** Cover the happy path, negative path, boundary cases, and important
+   regression paths.
+3. **Prepare test data.** Use safe test accounts and masked or synthetic data. Do not copy production data
+   into lower environments without approval.
+4. **Run the tests in the target environment.** Use the build that is being promoted, not a local or stale
+   build.
+5. **Record results and evidence.** Every case must have a status and enough evidence to support the
+   decision.
+6. **Log defects immediately.** Include steps to reproduce, expected vs. actual behavior, environment,
+   evidence, severity, and priority.
+7. **Retest fixes.** A defect is not closed until the fix is verified and any needed regression check has
+   passed.
+8. **Give a promotion recommendation.** State `go`, `hold`, or `go with accepted risk`.
+
+## Ownership
+
+| Role | Responsibility |
+| --- | --- |
+| **Engineer** | Self-checks the change, provides test notes in the PR, and supports reproduction. |
+| **Tech Lead** | Confirms the manual test scope is enough for promotion and accepts residual technical risk. |
+| **QA / Tester** | Designs and runs manual cases where the project has QA coverage. |
+| **Product Owner** | Confirms business acceptance and accepts product risk when a known issue is deferred. |
+| **Release owner** | Ensures manual evidence exists before approving release movement. |
+
+## LLM and RAG checks
+
+For features with LLM or RAG behavior, manual testing must use a fixed set of realistic inputs with agreed
+pass/fail criteria. This is the **frozen task set**.
+
+The frozen task set is required because model output is often judgment-based rather than exact. It turns
+"looks good" into a repeatable evaluation.
+
+1. **Collect real inputs.** Use 20-40 representative prompts, messages, documents, calls, or records.
+2. **Define acceptance criteria.** State what a good answer must include, avoid, cite, classify, or decide.
+3. **Freeze the set.** Keep it version-controlled with the product.
+4. **Run it before promotion.** Record pass, fail, or risk for each input.
+5. **Grow it deliberately.** Add new inputs when behavior expands or a new failure mode is found.
+
+The frozen task set later becomes the handoff into the
+[Automation Testing](automation-testing-standard.md) standard.
+
+## Exit criteria
+
+Manual testing is complete only when:
+
+- all planned test cases have a recorded result;
+- all failed or blocked cases have a linked defect, explanation, or accepted risk;
+- no critical user journey is untested without explicit risk acceptance;
+- LLM/RAG features have been checked against the frozen task set where applicable;
+- the tester has recorded a clear recommendation: `go`, `hold`, or `go with accepted risk`.
+
+!!! note "Not enough"
+    "Looks fine" is not a test result. A promotion decision must be tied to stated criteria and recorded
+    evidence.

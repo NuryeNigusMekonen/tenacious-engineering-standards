@@ -51,8 +51,8 @@ Branch prefixes and the exact version scheme are set per project in its conventi
 
 ## The release process
 
-1. Confirm the change has passed manual validation (see the [Manual Testing Framework](manual-testing-standard.md))
-   and, where it exists, the automated suite (see the [Automation Test Standard](automation-testing-standard.md)).
+1. Confirm the change has passed manual validation (see [Manual Testing](manual-testing-standard.md))
+   and, where it exists, the automated suite (see [Automation Testing](automation-testing-standard.md)).
 2. Promote `dev → staging` (Tech Lead approves).
 3. Validate in staging against the stated criteria.
 4. **Promote `staging → production` through the joint gate** (Tech Lead and Project Owner). This is the
