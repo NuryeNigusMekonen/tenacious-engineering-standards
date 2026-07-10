@@ -34,7 +34,7 @@ includes the project initialization checklist used at the start of every project
 
 ```bash
 # Install dependencies
-pip install mkdocs-material
+pip install mkdocs-material mkdocs-git-revision-date-localized-plugin
 
 # Serve the site locally with live reload
 mkdocs serve

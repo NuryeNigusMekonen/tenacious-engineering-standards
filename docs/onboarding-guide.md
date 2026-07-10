@@ -65,7 +65,7 @@ fixing it is a welcome contribution.
 
 !!! tip "Run the site locally"
     ```bash
-    pip install mkdocs-material
+    pip install mkdocs-material mkdocs-git-revision-date-localized-plugin
     mkdocs serve
     ```
     Then open <http://127.0.0.1:8000> to preview your changes with live reload.

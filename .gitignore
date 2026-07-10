@@ -17,6 +17,3 @@ env/
 .DS_Store
 .idea/
 .vscode/
-
-# Exclude the internal STLC process document from site publishing
-/docs/STLC_Process_Standard.md

@@ -11,9 +11,6 @@ edit_uri: ""
 
 docs_dir: docs
 
-exclude_docs: |
-  STLC_Process_Standard.md
-
 theme:
   name: material
   logo: assets/mark-white.png
