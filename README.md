@@ -1,5 +1,11 @@
 # Tenacious Engineering Standards
 
+> **TL;DR:** This repository is the official standard for how engineering work moves from a developer's
+> machine to production at Tenacious, covering repository setup, branching, code review, CI/CD, testing,
+> and release management. It's published as an MkDocs Material site on GitHub Pages and enforces rules
+> like template-based repo creation, one-directional dev → staging → production promotion, and strict
+> credential and access controls.
+
 The official reference for how engineering work moves from a developer's machine to a production release
 at Tenacious. This repository documents the single development-side standard: repository setup, the
 engineering baseline, branch strategy and pull requests, code review, key management, CI/CD, manual and
