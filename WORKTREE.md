@@ -14,7 +14,7 @@ Summerize the readme and give me in one sentense
 - [x] Cross-check the new one-sentence summary against the full README content for accuracy
 - [x] Attempt verification (`make lint && make test`) and document tool availability
 - [x] Create `PROOF.md` with the one-sentence summary, verification results, and files changed
-- [ ] Commit, push, and open a PR
+- [x] Commit, push, and open a PR (https://github.com/NuryeNigusMekonen/tenacious-engineering-standards/pull/7)
 
 ## Verification
 Run: `make lint && make test`
