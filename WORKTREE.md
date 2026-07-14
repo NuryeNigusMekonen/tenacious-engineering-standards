@@ -1,20 +1,20 @@
-# Task: Summerize the readme and give me in one sentense 
-- **Branch**: task/tenacious-engineering-standards-29233
+# Task: Summerize
+- **Branch**: task/tenacious-engineering-standards-3499
 - **Repo**: NuryeNigusMekonen/tenacious-engineering-standards
 - **Context**: inline
-- **Created**: 2026-07-13T07:53:53Z
+- **Created**: 2026-07-14T04:31:39Z
 
 ## Description
-Summerize the readme and give me in one sentense 
+Summerize
 
 ## Subtasks
-- [x] Read and analyze `README.md` to identify its core purpose, audience, and key rules
-- [x] Draft a single, accurate one-sentence summary of the README
-- [x] Tighten the README's TL;DR blockquote to exactly one sentence (task asks for "one sentence"; current TL;DR is two)
-- [x] Cross-check the new one-sentence summary against the full README content for accuracy
-- [x] Attempt verification (`make lint && make test`) and document tool availability
-- [x] Create `PROOF.md` with the one-sentence summary, verification results, and files changed
-- [x] Commit, push, and open a PR (https://github.com/NuryeNigusMekonen/tenacious-engineering-standards/pull/7)
+- [x] Audit the repo to scope what "summarize" should apply to (README/index.md already have a one-sentence TL;DR and card summaries from prior tasks; a consolidated one-page digest of all 11 standards does not yet exist)
+- [x] Read every doc in `docs/` in full to extract each standard's core, non-negotiable rule
+- [x] Draft `STANDARDS_SUMMARY.md` at repo root: one-page digest with a one-line takeaway per standard plus the full core-rules list
+- [x] Cross-check every line of the summary against its source doc for accuracy (no invented rules, no dropped nuance)
+- [x] Run verification and record why `make lint && make test` doesn't apply to this repo
+- [x] Write `PROOF.md` with results, files changed, and a walkthrough
+- [x] Commit, push, and open the PR — https://github.com/NuryeNigusMekonen/tenacious-engineering-standards/pull/8
 
 ## Verification
 Run: `make lint && make test`
@@ -24,13 +24,13 @@ Run: `make lint && make test`
 2. If no subtasks are listed above, break this task into 3-7 concrete subtasks
    and add them as a checklist in this file before starting implementation.
    **Register each subtask in the database** so it can be tracked:
-   `curl -s -X POST http://localhost:7700/api/task-db/5/subtasks -H 'Content-Type: application/json' -d '{"title": "<subtask title>"}'`
+   `curl -s -X POST http://localhost:7700/api/task-db/7/subtasks -H 'Content-Type: application/json' -d '{"title": "<subtask title>"}'`
 3. Implement each subtask in order, checking them off as you go
 4. After completing each subtask, update its status:
    `curl -s -X PATCH http://localhost:7700/api/task-db/subtasks/{id} -H 'Content-Type: application/json' -d '{"status": "done"}'`
 5. Run verification (see ## Verification above)
 6. Create `PROOF.md` with: test results, files changed, brief walkthrough
-7. Commit all changes and push: `git add -A && git commit -m 'feat: <summary>' && git push -u origin task/tenacious-engineering-standards-29233`
+7. Commit all changes and push: `git add -A && git commit -m 'feat: <summary>' && git push -u origin task/tenacious-engineering-standards-3499`
 8. Create a PR: `gh pr create --base main --title '<task title>' --body 'Automated PR from agent task' --fill 2>/dev/null || true`
 9. Exit when complete
 
