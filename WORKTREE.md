@@ -14,7 +14,7 @@ Summerize
 - [x] Cross-check every line of the summary against its source doc for accuracy (no invented rules, no dropped nuance)
 - [x] Run verification and record why `make lint && make test` doesn't apply to this repo
 - [x] Write `PROOF.md` with results, files changed, and a walkthrough
-- [ ] Commit, push, and open the PR
+- [x] Commit, push, and open the PR — https://github.com/NuryeNigusMekonen/tenacious-engineering-standards/pull/8
 
 ## Verification
 Run: `make lint && make test`
